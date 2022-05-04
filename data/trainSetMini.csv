@@ -1,0 +1,1001 @@
+,Unnamed: 0,Text,Label
+823,825,yall enter it,CEC-S
+1116,1119,try adjusting yours again,CEC-S
+5419,43662,how do we move the shit around,SESU-P
+5204,43447,did you try 270?,SESU-P
+1827,31021,ok im closer,CMC-S
+893,896,Set your arrow on the multimeter pointing right,CEC-S
+11416,49663,R1 at 150 ohm and 0.75V,SSI-O
+13670,51918,26.2 mA,SSI-O
+11393,49640,Mine just went down to 3.5,SSI-O
+14095,52343,1.69,SSI-O
+14356,52606,im at 1.8 rn,SSI-O
+8620,46863,boi,SMC-R
+8799,47042,agree,SN-A
+5539,43782,so you just vhange it to 1 K?,SESU-P
+7562,45805,6u,SMC-O
+3894,42135,"which means I= 0.00957... amps, and we each need ~470 volts on our resistor i think",CRF-F
+11510,49757,R2= 54.4,SSI-O
+6762,45005,how high do you wanna go?,SESU-P
+7863,46106,say too much power from the program shorted your computer,SMC-O
+11640,49887,4.19,SSI-O
+10033,48280,5.86,SSI-O
+9209,47452,yea current is 5.48 milli,SN-A
+11426,49673,im at 0.69V now,SSI-O
+1694,30888,we had it,CMC-S
+15221,53473,390,SSI-O
+14448,52698,at 150 with 1V,SSI-O
+10820,49067,617,SSI-O
+3099,41335,ight so we can measure the in voltage,CP-S
+2145,31340,i am at 2.25 at 270ohm off by .13,CMC-S
+6583,44826,What's that,SESU-P
+8621,46864,lets fo bouy,SMC-R
+2937,41172,we might have to guess,CP-S
+14491,52741,2=.05333*Req^2+Req^2,SSI-O
+3425,41661,lets go to the next one,CP-S
+11933,50180,881??,SSI-O
+3010,41246,i mean we can try that until we get something that makes sense,CP-S
+2298,31493,is anyone close,CMC-S
+7348,45591,nice going dumbass pliers,SMC-I
+414,415,I moved upi to 150 and now im at 1.01 voly,CEC-R
+97,98,Ill plug those in real quick and give you guys the ohms needed hold on,CEC-R
+12306,50553,Mine is set,SSI-O
+994,997,just do it asap,CEC-S
+9141,47384,I got 1630 Ohms yes,SN-A
+9199,47442,yea,SN-A
+15787,54042,oh i see that makes sense,SSI-U
+3165,41401,Let's try it!,CP-S
+10145,48392,its at 3.96,SSI-O
+9248,47491,"Yeah, 6 mA.",SN-A
+752,754,try 390 or 470,CEC-S
+14326,52576,imn at -3.93,SSI-O
+14606,52856,0.77,SSI-O
+11363,49610,so i across r0 is .022,SSI-O
+6835,45078,go down?,SESU-P
+9500,47743,"nah, 2.63",SN-D
+15903,54158,not sure,SSI-U
+11605,49852,ok cool. According to the voltage equation the ratio of (R/RT) needs to be 1/4,SSI-O
+946,949,take the 2.08,CEC-S
+11407,49654,I'm at 180 and have 2.62,SSI-O
+7010,45253,tiger whats your goal,SESU-P
+646,648,"Ok, I'll stop",CEC-R
+6869,45112,What is your goal and resistance at?,SESU-P
+3798,42039,Well if V=IxR We can use I=V/R by adding all the voltage and resistances together and using I=V/R maybe?,CRF-F
+13489,51737,i got 3.72,SSI-O
+2554,33704,gj,CM-G
+8505,46748,alright yall lets solve some curtcuits,SMC-R
+1581,30774,eagle,CMC-G
+4121,42362,same here,SESU-A
+2479,31674,.12 too high,CMC-S
+5145,43386,o,SESU-A
+7708,45951,Boooiiiiiii,SMC-O
+7593,45836,GAAAAAAAAANG,SMC-O
+11994,50241,.15 now,SSI-O
+4365,42606,same,SESU-A
+1548,30741,BEAR!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,CMC-G
+3364,41600,Good old ohms law,CP-S
+9380,47623,thats correct celery,SN-A
+9324,47567,yep,SN-A
+13707,51955,my voltage is 2.95 at the moment,SSI-O
+5102,43343,k,SESU-A
+9179,47422,Kinda,SN-A
+5044,43285,same,SESU-A
+7949,46192,what the corn,SMC-O
+4256,42497,oh damn,SESU-A
+1440,30633,is this the same group?,CMC-G
+11023,49270,I got I = .0085454 A,SSI-O
+4504,42745,that's our I,SESU-A
+1498,30691,baked?,CMC-G
+9932,48179,5.6M,SSI-O
+9210,47453,ya we need to find our current voltage with the same resistamce,SN-A
+10973,49220,4 drops,SSI-O
+13630,51878,I'm getting ~378,SSI-O
+3577,41813,red or green lock in a resistor value and let the other fiddle around utnill we get 2.75,CP-S
+2486,31681,i tried that and it didn't work,CMC-S
+14923,53175,I'm still at 0 now matter what I do,SSI-O
+15288,53540,mine is 120 ohms,SSI-O
+535,537,i went up one,CEC-R
+7481,45724,7y6jn,SMC-O
+8624,46867,wow,SMC-R
+5706,43949,how the heck,SESU-P
+3473,41709,try 270,CP-S
+1894,31088,which the program tells me is correct,CMC-S
+15806,54061,my confusion hasn't,SSI-U
+15891,54146,nvm,SSI-U
+8330,46573,Hey,SMC-R
+5289,43532,do either one of you have strips or collors on your rest?,SESU-P
+2966,41201,let's see if it works,CP-S
+9526,47769,we have to be exactly at 2,SN-D
+153,154,Since the voltage drops are all the same since the Resistance is equal,CEC-R
+6199,44442,what voltage do you need?,SESU-P
+14063,52311,me,SSI-O
+15337,53589,6.67*3 is our combined drop,SSI-O
+11277,49524,3.25 here,SSI-O
+12999,51247,"Im at 3V, need to be at 3.6",SSI-O
+270,271,im doing the math from class today. almost done,CEC-R
+4614,42855,ok,SESU-A
+3201,41437,add 180 to 680,CP-S
+6115,44358,"what about 220, obviously were close..lol",SESU-P
+3026,41262,"try to chose 1k resistor and measure it if the voltage not as your goal, change the resistor",CP-S
+7791,46034,same,SMC-O
+13020,51268,im at 1.68 i need 1.69,SSI-O
+11709,49956,ok my goal is 1.06 V,SSI-O
+7433,45676,.,SMC-O
+3210,41446,bear go up one,CP-S
+13827,52075,my red lead was slightly off,SSI-O
+291,292,um I found the voltage for R0 and then divided it by 330,CEC-R
+3593,41829,round up if you have to,CP-S
+970,973,"it will change a bit, keep playing with the resistors",CEC-S
+574,576,I'm back where I started but I'm not changing anything till I get something on paper,CEC-R
+2673,40908,we need to calculate E,CP-G
+1807,31001,got it,CMC-S
+4435,42676,on2,SESU-A
+14614,52864,mine is also 3V,SSI-O
+12103,50350,goal is 2.5. I assume its the same for all of us,SSI-O
+13231,51479,7.83,SSI-O
+13057,51305,220 ohms,SSI-O
+3020,41256,ok move on!,CP-S
+4093,42334,on teh wires,SESU-A
+15000,53252,My goal is also 4 volts,SSI-O
+10891,49138,220,SSI-O
+9315,47558,"Yeah it is, but current changes too",SN-A
+13794,52042,I have 2.35,SSI-O
+3073,41309,someone else should try,CP-S
+15761,54016,i think so not sure didnt write everything from that video,SSI-U
+12334,50581,So the current is about .013,SSI-O
+11181,49428,i'm at 2.7 kiliohms,SSI-O
+10403,48650,mines at 330k,SSI-O
+11027,49274,Gucci. mine was 100,SSI-O
+7525,45768,tkf,SMC-O
+15679,53934,im lost in the sauce,SSI-U
+11000,49247,mine's 2.25 volts,SSI-O
+3109,41345,"Tiger, can you connect your wires? then we can measure our voltages",CP-S
+14519,52769,Mine is 3.75,SSI-O
+9377,47620,Yea I know E is the voltage,SN-A
+8324,46567,sorry or confusion,SMC-R
+7219,45462,ok are you pointing to the DCV thing,SESU-P
+15507,53762,there is something we are overlooking here,SSI-U
+12304,50551,So my target voltage is 3.75V,SSI-O
+15540,53795,i just got the anser,SSI-U
+3002,41238,so for this i think we need to set up a system of equations where when we change the voltage we need to calculate the total voltage and set it equal to each other and then find current,CP-S
+4987,43228,ohms*,SESU-A
+8228,46471,sorry,SMC-R
+1182,1185,lion put ur resistor back to how it was b4,CEC-S
+11438,49685,i need 3.5 V too,SSI-O
+8334,46577,lets do this,SMC-R
+10662,48909,3.25,SSI-O
+12070,50317,someone unplugged a wire im getting 0 volts now,SSI-O
+4100,42341,ok,SESU-A
+12538,50785,im r1,SSI-O
+2987,41223,you have to submit the battery voltage first,CP-S
+5906,44149,Iowa and I will set to 100 and Ohio do you want to test resistors about 100?,SESU-P
+5760,44003,I'm sorry to be forgetting things. How do I find that?,SESU-P
+8037,46280,im no electrical engineer lol,SMC-O
+5588,43831,maybe?,SESU-P
+5779,44022,correct?,SESU-P
+3285,41521,lets work from there then same as before,CP-S
+8372,46615,hahaha,SMC-R
+12351,50598,1.86V,SSI-O
+15199,53451,need a change of 10 ohms or something like that,SSI-O
+14643,52893,mine went down to 6.66,SSI-O
+14517,52767,Mine is currently at 3.75 V,SSI-O
+13143,51391,3.73,SSI-O
+12898,51146,my is 4 V,SSI-O
+1106,1109,let me know when you want me to try,CEC-S
+6102,44345,what's everyone's resistance?,SESU-P
+13163,51411,OHMS,SSI-O
+6367,44610,What resistors are you guys using???,SESU-P
+935,938,try 47?? hawk,CEC-S
+15546,53801,i was wrong,SSI-U
+8381,46624,omg,SMC-R
+3166,41402,We should divide our voltage goal by the resistor value we have to find the current that is the same throughout the circuit. Then plug in E=IxR0 + IxR1 + IxR2 + xR3. because then we will have the same I value across the whole circuit to use,CP-S
+13050,51298,"3,25",SSI-O
+8593,46836,^!!!,SMC-R
+6244,44487,should i stay at 100 ohms resistor,SESU-P
+11379,49626,4.5 V here too,SSI-O
+8053,46296,( ?­?ø ???? ?­?ø),SMC-O
+6305,44548,what the level of your resistor,SESU-P
+11889,50136,Goal 1.43V,SSI-O
+8446,46689,hey,SMC-R
+2021,31216,im there,CMC-S
+3661,41902,I think the middle cursiut needs to stay at 150,CRF-F
+2144,31339,im good,CMC-S
+5438,43681,"don't change anything, what is your goal voltage?",SESU-P
+9538,47781,no,SN-D
+3591,41827,then we will all have the same voltage drop across our resistors and can find E,CP-S
+8700,46943,yes both values are correc,SN-A
+14310,52560,1.86 for me,SSI-O
+7584,45827,How do we skip this,SMC-O
+10108,48355,mines high,SSI-O
+14629,52879,mine is at 100,SSI-O
+7601,45844,ask him,SMC-O
+11174,49421,im at 68,SSI-O
+12812,51060,my goal is 9.56,SSI-O
+9767,48010,"nope, I'm at 5.08 volts",SN-D
+14438,52688,330,SSI-O
+13616,51864,series amps,SSI-O
+2896,41131,Keep messin with numbers,CP-S
+7536,45779,p,SMC-O
+14498,52748,V0R0 = 2R1,SSI-O
+14502,52752,v=ir,SSI-O
+15164,53416,red on the left,SSI-O
+15547,53802,help,SSI-U
+311,312,i changed one band color to orange which was a lower number,CEC-R
+4771,43012,3.42*,SESU-A
+939,942,half it or double it,CEC-S
+7263,45506,802?,SESU-P
+5622,43865,we should end up with the same currrent?,SESU-P
+14794,53044,390,SSI-O
+9817,48064,we only have total voltage and R0 and our assigned resistor,SSI-O
+7274,45517,I'm guessing there is no way to change the supplied voltage??,SESU-P
+9363,47606,ya one sec,SN-A
+540,542,I cant get close,CEC-R
+13370,51618,I got I=.005,SSI-O
+8701,46944,right,SN-A
+7922,46165,del v,SMC-O
+14560,52810,goal of 0.96V,SSI-O
+13807,52055,E=IR,SSI-O
+12938,51186,we all have the same,SSI-O
+15527,53782,I do :),SSI-U
+8191,46434,hawk is here,SMC-R
+3951,42192,the current should be the same throughout the whole circuit,CRF-R
+6219,44462,what is your voltage reading?,SESU-P
+14205,52453,2.54 is where im at,SSI-O
+3479,41715,lower,CP-S
+2993,41229,i got the resistance with the equation with the 0.0208 amps. but to find our own resistances we gotta get another one,CP-S
+8788,47031,nope,SN-A
+880,883,"wait, what's everyone's goal?",CEC-S
+11115,49362,Ro is 270 and V is 3.87,SSI-O
+6129,44372,"R1, what is your goal voltage again?",SESU-P
+8347,46590,thank gosh,SMC-R
+9202,47445,yea,SN-A
+13345,51593,so 2 need 1 volt and one needs 1.25,SSI-O
+7040,45283,hawk?,SESU-P
+7048,45291,Do you know how to solve for E?,SESU-P
+15732,53987,i am confused af lol,SSI-U
+9143,47386,"Yeah i got a message saying that our readings are correct, it's just our E that isn't",SN-A
+5006,43247,actually .028,SESU-A
+15372,53624,Mine is 1.51,SSI-O
+14960,53212,390 ohms 4.87V,SSI-O
+13031,51279,im at 330,SSI-O
+1851,31045,below,CMC-S
+7846,46089,idk why that was in caps lol,SMC-O
+11134,49381,1.02,SSI-O
+5412,43655,"my resistance was at 180 for the last one, what were you guys at",SESU-P
+14422,52672,3.61 now,SSI-O
+3723,41964,I think mine is about 1k,CRF-F
+9717,47960,nope,SN-D
+6350,44593,Is R0 relevant,SESU-P
+12350,50597,great alright the target voltage is 6.95V for me,SSI-O
+4149,42390,me either,SESU-A
+9126,47369,yeah,SN-A
+9829,48076,i got 1.51,SSI-O
+1856,31050,whos close,CMC-S
+8852,47095,yes,SN-A
+11825,50072,"so its lion, then bear, then tiger",SSI-O
+8208,46451,lol,SMC-R
+15508,53763,"Sorry, E = E0 + E1 + E2 + E3",SSI-U
+1415,30608,ice,CMC-G
+524,526,i went down,CEC-R
+13311,51559,R0 VOLTAGE IS GONNA BE 2.86V,SSI-O
+7132,45375,send your current voltage please,SESU-P
+12198,50445,the number on the meter,SSI-O
+11834,50081,thats a big difference,SSI-O
+1522,30715,pie what are you at for resistance right now,CMC-G
+14272,52520,mine says im at 0.01,SSI-O
+8392,46635,hello,SMC-R
+12668,50915,my voltage is 5.88,SSI-O
+10264,48511,3.52v,SSI-O
+12927,51175,down in resistance to increase voltage,SSI-O
+2974,41210,Lets try 16 volts for E,CP-S
+14892,53142,3.75 for me,SSI-O
+6551,44794,how about I move down 1 resistor and you can run back thru,SESU-P
+8399,46642,perfect,SMC-R
+8266,46509,huh,SMC-R
+6407,44650,okay so R1 has to make sure theirs works first and then R2 and then R3?,SESU-P
+15131,53383,nvm we good,SSI-O
+3684,41925,so I think the resistance is supposed to be 220 for all the resistors,CRF-F
+11270,49517,goal voltage,SSI-O
+4382,42623,okay,SESU-A
+6777,45020,What does it say for all of you?,SESU-P
+5377,43620,will it mess us up if I go back to the video?,SESU-P
+9994,48241,and then the first resistance is 120,SSI-O
+3207,41443,lets all drop to 100 ohms and see what happens,CP-S
+11361,49608,But that needs to change for each one too,SSI-O
+1243,1246,okay leave it there dont touch it,CEC-S
+5159,43402,I think the DCV just changes the scale correct?,SESU-P
+10960,49207,mines working,SSI-O
+10191,48438,.92 now,SSI-O
+7676,45919,rip team animals,SMC-O
+7335,45578,damn,SMC-I
+5998,44241,wat now,SESU-P
+14200,52448,0.99,SSI-O
+1726,30920,Mine's a little low now. 1.59,CMC-S
+13504,51752,3.78v,SSI-O
+8893,47136,yea,SN-A
+6656,44899,"it would have to be 3, right?",SESU-P
+7502,45745,djqwpg,SMC-O
+2012,31207,Im there,CMC-S
+12150,50397,"Ok, I need 2.29V now.",SSI-O
+4862,43103,To 100,SESU-A
+5099,43340,for the resistance of your thing,SESU-A
+9332,47575,yep,SN-A
+14331,52581,im on 200 avc,SSI-O
+4695,42936,For your resistance,SESU-A
+5569,43812,is my R not right? hollup sorry,SESU-P
+10042,48289,i got 180,SSI-O
+12775,51023,so  I am thinking we can do our calculation,SSI-O
+7279,45522,ok how do you calculate voltage supplied,SESU-P
+2376,31571,over,CMC-S
+5311,43554,what are your resistors rated at,SESU-P
+8987,47230,yup!,SN-A
+12667,50914,E is the sum of all of the voltages,SSI-O
+14632,52882,I got 3 V for mine,SSI-O
+11332,49579,its 220 ohms,SSI-O
+12492,50739,i have 0.19,SSI-O
+3600,41836,we can tell eachother our current resistor values and voltage drops and we can combine that with R0 to find E,CP-S
+8315,46558,haha,SMC-R
+5398,43641,how close is everyone to their goal?,SESU-P
+7860,46103,2......,SMC-O
+1258,1261,dont mess w anything yet,CEC-S
+2766,41001,try 680 lol,CP-S
+11463,49710,Im at 1k ohms with 4.96V,SSI-O
+102,103,ima do it and let me know,CEC-R
+14346,52596,im at 2.7 now,SSI-O
+2856,41091,All of guys try 220,CP-S
+15227,53479,1.33 v,SSI-O
+5941,44184,so doing that you are finding voltage over R0 right?,SESU-P
+12049,50296,at 9.89,SSI-O
+12802,51050,aye everyone has their values,SSI-O
+15018,53270,Mine says 2.36,SSI-O
+2058,31253,got it,CMC-S
+4798,43039,same,SESU-A
+2159,31354,"perfect, i think we all met our goal!",CMC-S
+12217,50464,I'm at 330,SSI-O
+5804,44047,Did someone change somethin? My resistor is now 180 ohms,SESU-P
+2612,40847,we need E,CP-G
+14148,52396,im now at 3.93,SSI-O
+7135,45378,"Green, are you at 2.71 right now?",SESU-P
+5752,43995,did someone change their resistance?,SESU-P
+10425,48672,i need 1.5,SSI-O
+11144,49391,our combined is 5.46,SSI-O
+2238,31433,submitted,CMC-S
+2230,31425,im low by .3,CMC-S
+10010,48257,my next lowest is 120,SSI-O
+6210,44453,you guys having any luck?,SESU-P
+3656,41897,maybe if we have the same one it will work,CRF-F
+11882,50129,330?? and 4 v,SSI-O
+15717,53972,i'm not sure,SSI-U
+1070,1073,set it for 56,CEC-S
+555,557,I moved mine up to 560,CEC-R
+6352,44595,did you just play with it until it worked?,SESU-P
+763,765,circuit one go down one,CEC-S
+4949,43190,volts*,SESU-A
+9053,47296,it was probably wrong,SN-A
+2306,31501,I have my goal,CMC-S
+2893,41128,K so we all hav the same one try 1.8k,CP-S
+982,985,r3 try something around 330 ohm,CEC-S
+12618,50865,im using 1.2k,SSI-O
+9335,47578,should be .075 as you said,SN-A
+11079,49326,0.53,SSI-O
+8134,46377,bye,SMC-R
+2040,31235,2.5,CMC-S
+12751,50999,"E is unknown, R0 = 560 ƒ??, your goal is to make your voltage 2.38 volts.",SSI-O
+11821,50068,my target voltage is 2.5 V,SSI-O
+8919,47162,yeah,SN-A
+2757,40992,from here use goal voltages to find your R,CP-S
+14191,52439,1.26,SSI-O
+5761,44004,is it across the resistor?,SESU-P
+445,446,i rounded a few decimal places for reference,CEC-R
+12014,50261,0.15,SSI-O
+13791,52039,so I need to be .423 of the Resistance,SSI-O
+1872,31066,too much,CMC-S
+268,269,Ok. it changed mine too but not target goal,CEC-R
+11086,49333,This very second,SSI-O
+10523,48770,mine is 8,SSI-O
+5846,44089,what is everyones resistance?,SESU-P
+12872,51120,1.62 with a 390 ohm resistor,SSI-O
+7084,45327,Was your voltage exactly 3?,SESU-P
+1055,1058,increase yours tiger,CEC-S
+2866,41101,ok everyone to 470 then,CP-S
+7758,46001,that's why you had to set up a user name,SMC-O
+15256,53508,mine is 0.027125,SSI-O
+3015,41251,"Lets let Hawk gets theirs right first, and we can move down the circut",CP-S
+2560,40795,But its the total voltage that needs to be calculated,CP-G
+14299,52547,im on 470,SSI-O
+12137,50384,now i read 2.33,SSI-O
+14442,52692,e=IR,SSI-O
+30,31,I use 270,CEC-R
+1154,1157,green try going to 270 ohm,CEC-S
+3559,41795,lets just all try 120,CP-S
+1524,30717,what are you at ice cream,CMC-G
+6627,44870,shall we all try what we get with ohm's law and see if it works?,SESU-P
+10562,48809,i=.011899,SSI-O
+13549,51797,2.37 now,SSI-O
+29,30,did it,CEC-R
+5283,43526,red you see it?,SESU-P
+5705,43948,i'm at 100 Ohms right now. everyone else?,SESU-P
+11513,49760,e=14 v R0= 560 ohms R3=56 Ohms,SSI-O
+5246,43489,how do we do this,SESU-P
+5814,44057,so we all need to change our resistor value to 560 ohm?,SESU-P
+11808,50055,1.31*120,SSI-O
+8057,46300,( ?­?ø ???? ?­?ø),SMC-O
+11354,49601,"I', gettig 1.81",SSI-O
+7392,45635,They should put formula on the top,SMC-O
+14047,52295,im at 1000,SSI-O
+5931,44174,okay so use .11 for the current?,SESU-P
+2449,31644,my goal is 7.15 but im at 7.30,CMC-S
+1015,1018,ohio start,CEC-S
+761,763,rain can you move you resistance around?,CEC-S
+3976,42217,Ok so our resistance will all be the same,CRF-R
+6889,45132,so now what,SESU-P
+2280,31475,got mine,CMC-S
+9317,47560,think so,SN-A
+4212,42453,i did too,SESU-A
+7358,45601,im so sorry i cucked us,SMC-I
+790,792,hawk don't do anything,CEC-S
+6051,44294,who is r1,SESU-P
+3371,41607,Each resistor affects the others so do we need to coordinate and pick ones at the same time,CP-S
+3185,41421,We have to adjust our resistance so that the current increases,CP-S
+11204,49451,easier to add,SSI-O
+3502,41738,someone try going up see if that works,CP-S
+7092,45335,Did everyone change to 270?,SESU-P
+10290,48537,20,SSI-O
+1438,30631,lion?,CMC-G
+10556,48803,so v0 has to be 1.15,SSI-O
+10055,48302,1.07,SSI-O
+3974,42215,its the same problem,CRF-R
+3227,41463,everyoe set to 1k,CP-S
+8510,46753,please!,SMC-R
+2988,41224,everyone to 100 ohms again?,CP-S
+9833,48080,it keeps changing,SSI-O
+4535,42776,ok,SESU-A
+1878,31072,i got my voltage,CMC-S
+13233,51481,3.06,SSI-O
+340,341,i typed 17 V,CEC-R
+2387,31582,.08 high,CMC-S
+8724,46967,yea what value do u have on the resistor,SN-A
+2833,41068,so divide your v by .15,CP-S
+8332,46575,Hey,SMC-R
+2625,40860,we have to find a way to express r0 in terms of the values we do have,CP-G
+3665,41906,I think that all of us,CRF-F
+15878,54133,im confused as heck,SSI-U
+14547,52797,0,SSI-O
+15488,53743,you resistor in the middle,SSI-T
+8582,46825,At least we tried.,SMC-R
+7835,46078,RIP your calculator,SMC-O
+8255,46498,sweet lets do it,SMC-R
+10310,48557,im at 10 ohms but my voltage is -0.11,SSI-O
+12817,51065,Don't forget the R0 value too!,SSI-O
+2440,31635,all of them,CMC-S
+8866,47109,yup,SN-A
+10846,49093,so 1.13v is R0,SSI-O
+3336,41572,register as 680,CP-S
+3444,41680,"ok, everyone set resistance to 100",CP-S
+6621,44864,okay so maybe we set up a particular resistance like we all take 1k resuistors,SESU-P
+15331,53583,currently 1k ohms at 9.83,SSI-O
+6464,44707,RIGHT?,SESU-P
+3023,41259,I think one person should do the calculations and tell the rest what to do so we aren't switching it on eachother. What do you think?,CP-S
+13941,52189,im at 1.97 V,SSI-O
+15744,53999,I'm not sure what to plug in,SSI-U
+3315,41551,increase by one level,CP-S
+5782,44025,how do i calculate the current in thihs?,SESU-P
+4572,42813,me too,SESU-A
+13134,51382,MY V KEEPS CHANGING,SSI-O
+5853,44096,what volts does it ask you for?,SESU-P
+14209,52457,im now at 3.18,SSI-O
+9619,47862,no,SN-D
+1235,1238,stop,CEC-S
+4678,42919,For R1,SESU-A
+11010,49257,aight i think i got mine,SSI-O
+6850,45093,how clsoe are Y'all,SESU-P
+4150,42391,meter,SESU-A
+444,445,I'll just multiply it by 4,CEC-R
+5068,43309,East,SESU-A
+6760,45003,got it everyone,SESU-P
+15170,53422,mines at 2.01,SSI-O
+14216,52464,2.72 is my goal,SSI-O
+8322,46565,sadly....,SMC-R
+11610,49857,"we control r1, 2 and 3",SSI-O
+2013,31208,got mine,CMC-S
+1982,31177,im on!!,CMC-S
+7067,45310,or IxR?,SESU-P
+9150,47393,yes,SN-A
+1043,1046,Increase it to 390,CEC-S
+1137,1140,aw wait,CEC-S
+10381,48628,alrite i have 2.09,SSI-O
+3676,41917,guessed 10v,CRF-F
+6704,44947,what's eveyones ohm at?,SESU-P
+630,632,"okay, let me try some things",CEC-R
+9420,47663,Yeah,SN-A
+5320,43563,Did you now,SESU-P
+15340,53592,6.67 mA current,SSI-O
+13609,51857,it was like .00780487 or something,SSI-O
+9976,48223,150,SSI-O
+3317,41553,so circut 2 adjust the resistor till you get 4 on the multimeter and then circut 3 adjust till you get 4 on the multimeter i think,CP-S
+15530,53785,I'm a little confuse with finding the voltage,SSI-U
+7538,45781,p,SMC-O
+1654,30848,3.9M but way 1V off,CMC-S
+14469,52719,Mine is 2 V,SSI-O
+13905,52153,4.03,SSI-O
+2843,41078,and up our resistor values,CP-S
+15483,53738,i can see it if you click on view all circuits at the top,SSI-T
+2061,31256,just press the we got it once you do it,CMC-S
+11966,50213,2.53 v and 270 ohm on 1,SSI-O
+7667,45910,rip,SMC-O
+12997,51245,maybe I should increase mine,SSI-O
+10983,49230,3.1,SSI-O
+6813,45056,ok so what if we all made our resistors 680,SESU-P
+9451,47694,yeah,SN-A
+3813,42054,we have to add all of them up,CRF-F
+6197,44440,pot what's your resistor set to?,SESU-P
+5999,44242,"the dmm should be set to 20, right?",SESU-P
+14501,52751,600,SSI-O
+14389,52639,0.71,SSI-O
+15075,53327,3,SSI-O
+3866,42107,mine should be around 290,CRF-F
+9929,48176,1.2,SSI-O
+4056,42297,check,SESU-A
+6787,45030,wait what,SESU-P
+2452,31647,mines .3 high now,CMC-S
+14303,52551,2.15,SSI-O
+7871,46114,This is impossible to do on a phone,SMC-O
+7721,45964,quit,SMC-O
+6265,44508,Is that the answer,SESU-P
+12650,50897,1.23 jk,SSI-O
+8740,46983,yes,SN-A
+10134,48381,15 volts here,SSI-O
+14451,52701,120 with .74V,SSI-O
+9498,47741,total voltage shouldn't change,SN-D
+7458,45701,i,SMC-O
+12151,50398,I need 2.74V now,SSI-O
+5631,43874,volts?,SESU-P
+4895,43136,me too,SESU-A
+12076,50323,1000,SSI-O
+5409,43652,what is your E value?,SESU-P
+2921,41156,throw ur leads on resistor,CP-S
+14991,53243,mine says 4.43 right now,SSI-O
+11631,49878,mine is 390,SSI-O
+5216,43459,mashed what is the formula to figure out what the split resistance over each should be? do you known,SESU-P
+11185,49432,i'm back at 820,SSI-O
+4195,42436,huh....,SESU-A
+10437,48684,120 ohms,SSI-O
+7858,46101,alright ready,SMC-O
+7104,45347,"same, do we put in the E to start off with or are we trying to figure that out?",SESU-P
+8981,47224,TRUE,SN-A
+9691,47934,but we can't change r0,SN-D
+6074,44317,If we break the connection and just hook the multimeters in series shouldn't that be the current for just R0?,SESU-P
+8555,46798,thanks,SMC-R
+3844,42085,"it should by like 560,680 or 820",CRF-F
+7108,45351,??,SESU-P
+5992,44235,is everyone's resistor at 10 ohms?,SESU-P
+3757,41998,that what we were trying earlier. we should be able to calculate R0's v because amps should be the same throughout the circuit,CRF-F
+14033,52281,Mine's 1.2,SSI-O
+12672,50920,1.56,SSI-O
+7788,46031,why can't we move forward?,SMC-O
+15184,53436,im at 270 with 2.72,SSI-O
+14301,52549,2.15,SSI-O
+13026,51274,im at 1.69,SSI-O
+10959,49206,mines at 11,SSI-O
+15531,53786,i dont know what it wants us to do,SSI-U
+12709,50957,Iowa got 128.7 ohm,SSI-O
+14264,52512,one,SSI-O
+110,111,I set the the nob on 20 DCV and i have 4.18,CEC-R
+3777,42018,I think it should be 17 V,CRF-F
+15509,53764,Wrong variable,SSI-U
+15644,53899,nah nvm wrong number,SSI-U
+12552,50799,0.86,SSI-O
+6336,44579,did you guys get a total of 1630 ohms?,SESU-P
+4855,43096,at 1000,SESU-A
+2429,31624,im at my goal,CMC-S
+6355,44598,do you know what numbers we could plug in for a fomrula,SESU-P
+13125,51373,1.89,SSI-O
+10688,48935,im at 7.66,SSI-O
+13347,51595,I=.013A OR 13mA,SSI-O
+5113,43354,ok,SESU-A
+10786,49033,your goal,SSI-O
+9231,47474,Yep lol Dog you're right next to me I just saw my chat pop on on your screen,SN-A
+10804,49051,RT = 617,SSI-O
+88,89,ill stay put,CEC-R
+4891,43132,oh,SESU-A
+11273,49520,Peach you need 330,SSI-O
+15257,53509,so then 390*0.012083=4.71237,SSI-O
+10576,48823,im at 3.14,SSI-O
+11429,49676,im at 120,SSI-O
+14202,52450,i went down,SSI-O
+6472,44715,HOW THE HELL WE SUPPOSED TO FIND R 0,SESU-P
+1180,1183,bear please just click on the pin to plug it in,CEC-S
+7029,45272,any suggestions?,SESU-P
+5074,43315,same,SESU-A
+2477,31672,im .02 too high,CMC-S
+6812,45055,what is everyone's e and r0,SESU-P
+4079,42320,i am,SESU-A
+3532,41768,Everyone just try to play around and make your thing read 170 A,CP-S
+3342,41578,lets go for 680k ohms,CP-S
+3994,42235,same here lol,SESU-A
+7948,46191,thees is a deesaster,SMC-O
+4092,42333,interesting,SESU-A
+1350,14146,i'm at 1.37 :/,CE-E
+2329,31524,got it!,CMC-S
+2695,40930,we have to get to our goal voltage now,CP-G
+15094,53346,mine unplugged ut its good now,SSI-O
+1049,1052,to 390,CEC-S
+13722,51970,and I need 2.81,SSI-O
+12230,50477,Oh i forgot about R0,SSI-O
+7739,45982,onward to the next page,SMC-O
+14551,52801,Mine is at 1.08,SSI-O
+2826,41061,by .0128,CP-S
+3739,41980,i think we just need to find a common resistor for each of the 3 places but im not entirely sure how to get there,CRF-F
+10862,49109,"since R0 is 1000 Ohms and all our resistors are the same value, all our resistors are 1000 Ohms",SSI-O
+4635,42876,hmmm,SESU-A
+12258,50505,im R1,SSI-O
+11611,49858,so that means the leftover 2.75 has to be dropping over R0 as well,SSI-O
+8018,46261,Why cant you change it,SMC-O
+4030,42271,2.75,SESU-A
+7827,46070,,SMC-O
+7463,45706,i,SMC-O
+1887,31081,we there yet?,CMC-S
+10888,49135,im at 1.62V,SSI-O
+7729,45972,aaaaaaaaaaaaay,SMC-O
+8554,46797,Let's get this bread!,SMC-R
+14481,52731,theres no 200,SSI-O
+4957,43198,same,SESU-A
+3173,41409,okay lets use our ohms law knowledge to figure this out,CP-S
+8225,46468,good one,SMC-R
+15273,53525,1.52+.69+6.91+n=9.12+n,SSI-O
+2094,31289,mine said 12 was correct,CMC-S
+3457,41693,i think you pull out the first lead from the circuit and connect the meter into that break,CP-S
+4965,43206,same,SESU-A
+13820,52068,1000,SSI-O
+9757,48000,no bc total resistance is just added up between the three resistors,SN-D
+9589,47832,nope,SN-D
+4050,42291,bet,SESU-A
+9682,47925,but thatll just give 4000,SN-D
+11599,49846,180,SSI-O
+3040,41276,we can try it,CP-S
+13206,51454,hes checking his notes,SSI-O
+14834,53084,i'm at 2.6 and 220,SSI-O
+203,204,horn now just keep changing your resistance until you get to 4.25 V. It might work,CEC-R
+4797,43038,Same,SESU-A
+1560,30753,TigER,CMC-G
+5626,43869,if so why?,SESU-P
+269,270,im going to 140. that was my too high,CEC-R
+15753,54008,Okay Grape i understand now,SSI-U
+12950,51198,"Then R2, then R3 has the smaller resistance",SSI-O
+10535,48782,V=Ir1+ir2+ir3,SSI-O
+15833,54088,I think we're onto something,SSI-U
+4054,42295,same,SESU-A
+3938,42179,we should all have the same current,CRF-R
+3881,42122,Upping your resistance decreases your voltage.,CRF-F
+5648,43891,are we supposed to get an E value first?,SESU-P
+9192,47435,yep,SN-A
+11446,49693,I = 0.006,SSI-O
+2728,40963,click on resistor and change the value if you want to,CP-S
+10602,48849,3.97,SSI-O
+3940,42181,The current is the same acrossed all the resistors when theyre in series,CRF-R
+9013,47256,ya,SN-A
+5097,43338,as the total current for the series circut,SESU-A
+8311,46554,sigh,SMC-R
+8631,46874,it's the same thing,SN-A
+8749,46992,yes,SN-A
+14896,53146,im at 3.09 again,SSI-O
+7550,45793,5y3.y5,SMC-O
+12892,51140,It didn,SSI-O
+7079,45322,So 117.65/3 = 39.2 per resistor?,SESU-P
+13021,51269,I get up to 4.77 volts,SSI-O
+585,587,i did that,CEC-R
+13720,51968,ok so the voltage drop from resistor 0 is,SSI-O
+2220,31415,i think i got it,CMC-S
+15285,53537,Everyones is 220 ohms,SSI-O
+6156,44399,any ideas?,SESU-P
+14315,52565,2.14,SSI-O
+4468,42709,hmmm ok then sorry,SESU-A
+5464,43707,what is the goal,SESU-P
+4031,42272,ah,SESU-A
+7854,46097,i am very upset,SMC-O
+7447,45690,yiy,SMC-O
+306,307,I fixed it,CEC-R
+6623,44866,so our goal v/0.006 ma?,SESU-P
+13395,51643,goal is 3.87,SSI-O
+5089,43330,hahahaha same forreal,SESU-A
+4059,42300,Bet,SESU-A
+12698,50946,which is 0.154,SSI-O
+5933,44176,how did you find that?,SESU-P
+549,551,i will go 470,CEC-R
+10431,48678,now 4.82,SSI-O
+4850,43091,ik right,SESU-A
+5092,43333,same,SESU-A
+14064,52312,should be on DCV 20,SSI-O
+15831,54086,Yeah I got no freakin clue as of yet,SSI-U
+5226,43469,any other ideas,SESU-P
+10301,48548,v=ir i guess,SSI-O
+7945,46188,easy peasy,SMC-O
+9074,47317,"Yeah, I got the same thing",SN-A
+8574,46817,teamwork.,SMC-R
+10717,48964,resistor,SSI-O
+6479,44722,right?,SESU-P
+4280,42521,Okay,SESU-A
+7286,45529,do we have to be under 100omhs,SESU-P
+2905,41140,would you find your R,CP-S
+4699,42940,that would explain it,SESU-A
+5368,43611,is everyone using DCV 20?,SESU-P
+6318,44561,what do yo uguys get if you guys put those numbers in there?,SESU-P
+10271,48518,thats the current,SSI-O
+9525,47768,not .22,SN-D
+6944,45187,what circuit is what,SESU-P
+663,665,I'm still trying to solve this,CEC-R
+92,93,im just decreasing the resistor,CEC-R
+4588,42829,same..,SESU-A
+7454,45697,ig,SMC-O
+4369,42610,same,SESU-A
+11732,49979,My resistor is now at 10 ohms.,SSI-O
+4616,42857,okay sweet,SESU-A
+14118,52366,reading 1.74,SSI-O
+14711,52961,150 with 3.52,SSI-O
+2513,31708,im close to my goal with a 330 ohm resistor (goal 2.2 at 2.14),CMC-S
+1579,30772,eagle,CMC-G
+15879,54134,and im confused too,SSI-U
+694,696,pause,CEC-S
+7081,45324,What are we supposed to do with that?,SESU-P
+13451,51699,im .01,SSI-O
+6441,44684,which resistor band have we been changing,SESU-P
+6975,45218,like to start or when we were close,SESU-P
+11840,50087,its saying 0 now,SSI-O
+3896,42137,okay so if 1.45=120*I,CRF-F
+10481,48728,that makes it go to 7.08 then drops to 6.85,SSI-O
+9262,47505,"right, then use the amps we find there",SN-A
+7069,45312,but how do we find it?,SESU-P
+11857,50104,11-5.64-3.85=1.51,SSI-O
+14133,52381,should all have same curretn in a series i thought,SSI-O
+2138,31333,wait i just got it,CMC-S
+15913,54168,"I thought i understood this, but now i am very confused",SSI-U
+10611,48858,mine is 4.5,SSI-O
+11704,49951,now mines automaticalyl gone up to 1.89 volts,SSI-O
+4366,42607,I thought so too but I guess not,SESU-A
+8865,47108,"sorry, your right",SN-A
+13868,52116,1.04 with 180,SSI-O
+4582,42823,ohm,SESU-A
+1721,30915,im still off,CMC-S
+4473,42714,me either,SESU-A
+9562,47805,no,SN-D
+2109,31304,im close also at 270 ohm,CMC-S
+14160,52408,1.65,SSI-O
+1970,31165,I changed mine to 270?? and I am .02V off,CMC-S
+6387,44630,E=8.13 V?,SESU-P
+5264,43507,R= 850?,SESU-P
+2684,40919,someone changed something now im a7 3.5,CP-G
+14447,52697,680 with 4.64 v,SSI-O
+13550,51798,3.42...,SSI-O
+3200,41436,someone try upping the resistance by one step,CP-S
+13018,51266,my goal is 1.95,SSI-O
+9903,48150,Was,SSI-O
+7033,45276,i guess for mine at least... do we all have the same values?,SESU-P
+5754,43997,ie the original R value which I think was 6.8Kohms?,SESU-P
+12145,50392,our current was the same v/r= 0.0035,SSI-O
+15807,54062,uh I honestly have no clue what I havbe,SSI-U
+11951,50198,4.5 V,SSI-O
+9016,47259,yep,SN-A
+3459,41695,I think you need to lower the resistance on yours,CP-S
+15180,53432,mine is still reading 2.61,SSI-O
+8879,47122,and yeah  valley youre right,SN-A
+387,388,trying to calculate this shit,CEC-R
+12994,51242,R3 at 390 ohms 7.7 on the meter and my goal is 7.47,SSI-O
+12819,51067,i have no clue it didnt say,SSI-O
+14152,52400,3.54,SSI-O
+3939,42180,That's because each of our circuits affects the others. So when one changes they all change.,CRF-R
+5625,43868,how,SESU-P
+11327,49574,R0 = (E - 0.05)/ 0.123,SSI-O
+15763,54018,just cant remember how to find that,SSI-U
+14622,52872,mine says zero now and we all have the same setup,SSI-O
+12681,50929,i have 1000 ohm too for R0,SSI-O
+8354,46597,^^^^,SMC-R
+1698,30892,we were close on getting 2,CMC-S
+1987,31182,0.08 away,CMC-S
+11301,49548,plus all our volts,SSI-O
+4295,42536,ok,SESU-A
+4293,42534,ROGER!?,SESU-A
+2619,40854,I think we all have to change ours till each one of our voltmeters says 2.5 on it..,CP-G
+7205,45448,what about now?,SESU-P
+9557,47800,nope,SN-D
+6366,44609,So like whats e,SESU-P
+1384,30577,plum you good?,CMC-G
+4132,42373,ok,SESU-A
+6204,44447,list your target voltages please?,SESU-P
+8501,46744,yee,SMC-R
+9,10,ok ill go up,CEC-R
+7341,45584,fuq,SMC-I
+7724,45967,I really wish i could use paper,SMC-O
+2263,31458,good,CMC-S
+2014,31209,ok im at goal,CMC-S
+13554,51802,I needa be at  3.51,SSI-O
+12063,50310,so my r is 1000,SSI-O
+1632,30826,im .01 off,CMC-S
+5281,43524,First things first is put your R0 and goal voltage,SESU-P
+2202,31397,OH shit we did it,CMC-S
+5316,43559,pliers what voltage do you need,SESU-P
+6000,44243,so  does yours randomly seem to change? like I got it on my goal but it shifts?,SESU-P
+5423,43666,do we all have to click the we got it thing?,SESU-P
+8346,46589,good work guys,SMC-R
+146,147,there now,CEC-R
+11787,50034,1.91 at 220,SSI-O
+7329,45572,liar,SMC-I
+7591,45834,im back my bad,SMC-O
+11502,49749,1.82 volts,SSI-O
+12779,51027,my r is 560,SSI-O
+3589,41825,so multiply your resistance by 0.00599 to see if it matches your goal,CP-S
+11664,49911,270,SSI-O
+2653,40888,starting with 6v and we need to make 1.5v,CP-G
+5801,44044,do you see that?,SESU-P
+15677,53932,how to get the proper I eludes me,SSI-U
+7233,45476,collie: so your multimeter is reading 470? or you mm is reading 80?,SESU-P
+8485,46728,Later,SMC-R
+9533,47776,nooo i need to go way higher than 150,SN-D
+580,582,ive been doing that,CEC-R
+8870,47113,yeah that works,SN-A
+14827,53077,2.44 volts,SSI-O
+15316,53568,"im 560, blue is 802 and green is 680",SSI-O
+12487,50734,4.6,SSI-O
+11541,49788,That means that R0 goal voltage is 5.98V.,SSI-O
+6155,44398,how do we change the resistance on the resistor,SESU-P
+1559,30752,Tiger?,CMC-G
+2834,41069,Put your probes,CP-S
+10711,48958,2 volts,SSI-O
+6508,44751,5.48?,SESU-P
+4285,42526,Ok,SESU-A
+9831,48078,"it did that too me too, i just ha to wait alittle",SSI-O
+1612,30805,did everyone enter the unknown value into the box?,CMC-G
+1394,30587,bear,CMC-G
+12720,50968,at 330,SSI-O
+14450,52700,4.97 at 820,SSI-O
+7521,45764,uj56trmk,SMC-O
+8201,46444,lol,SMC-R
+6338,44581,What if we tried that?,SESU-P
+3858,42099,this one should work,CRF-F
+15638,53893,This is hard,SSI-U
+4021,42262,ok,SESU-A
+13993,52241,my goal is 2.75,SSI-O
+3880,42121,Maybe it needs E,CRF-F
+10624,48871,1.54 volts,SSI-O
+15861,54116,idk what to do,SSI-U
+9730,47973,Forgot to subtract,SN-D
+14964,53216,now im at 4.12,SSI-O
+10701,48948,cus thats thousands,SSI-O
+4308,42549,im good,SESU-A
+4166,42407,okay okay,SESU-A
+11748,49995,4.75,SSI-O
+9714,47957,no,SN-D
+6485,44728,what does your guys voltage have to be,SESU-P
+8004,46247,was it important?,SMC-O
+8317,46560,ayye what up,SMC-R
+12163,50410,my goal is 2.25 volts,SSI-O
+15929,54184,ima do my best but this stuff tough tbh,SSI-U
+2471,31666,it worked,CMC-S
+2850,41085,and do 20v,CP-S
+13792,52040,our nubmers changed :'(,SSI-O
+6435,44678,whats everyone set at,SESU-P
+11401,49648,4.5 here,SSI-O
+12228,50475,now I'm up at 6.8V,SSI-O
+5743,43986,because that is current right?,SESU-P
+7741,45984,i need to use paper...,SMC-O
+2362,31557,way over,CMC-S
+3204,41440,drop yours one down,CP-S
+2253,31448,Not 1.5 ;but close,CMC-S
+14302,52550,mine went to 2.45,SSI-O
+4715,42956,copy that,SESU-A
+3106,41342,click \,CP-S
+2478,31673,.08 too high,CMC-S
+9365,47608,Yeah mine moves on its own as well,SN-A
+15192,53444,im at 270,SSI-O
+4094,42335,ok,SESU-A
+6959,45202,my thing at the top says 330 but when i measure it its 46.3? idk why,SESU-P
+4747,42988,1 lower,SESU-A
+8022,46265,Like when we went to 150 could you change it,SMC-O
+673,675,right now I'm going to keep mine at 1k,CEC-R
+14252,52500,3.81,SSI-O
+10935,49182,I read 3.33 V. From R3,SSI-O
+9395,47638,yeah mine just went down again,SN-A
+8577,46820,well good work yall,SMC-R
+10968,49215,15 v,SSI-O
+9088,47331,yeee 3.25,SN-A
+4494,42735,same,SESU-A
+1363,30556,just set it to  390,CMC-G
+7227,45470,green whats your goal?,SESU-P
+14913,53165,2.43,SSI-O
+11940,50187,one of you will hve to change,SSI-O
+12572,50819,5.37,SSI-O
+1270,1273,spaniel go down to 680,CEC-S
+2063,31258,hmmm my voltage still too lower,CMC-S
+4020,42261,ok,SESU-A
+7190,45433,any other ideas?,SESU-P
+1898,31092,Mine is right rn,CMC-S
+10917,49164,I'm R1 680,SSI-O
+7174,45417,do yall know what setting to put the meter on to see the resultant current?,SESU-P
+15181,53433,im at 270 with 2.47,SSI-O
+3335,41571,or make it 680,CP-S
+12908,51156,im at .67 v at 150 resistance,SSI-O
+7650,45893,"I did not, I think she will give us an extension",SMC-O
+8677,46920,"yes, im reading 2.75 v",SN-A
+12752,51000,at 2.32,SSI-O
+3431,41667,I think we need to use current to solve this. Mine is 18.6 amps,CP-S
+1447,30640,wher the hell are you,CMC-G
+2156,31351,i have it exactly now,CMC-S
+5838,44081,everyone write down whatever resistance they have right now to remeber it,SESU-P
+8657,46900,ya meter doesnt show that very well,SN-A
+10563,48810,i'm at 560,SSI-O
+5806,44049,Did you break your circuit to measure amps?,SESU-P
+13005,51253,6.5 on meter,SSI-O
+10661,48908,now im at 8.42,SSI-O
+11658,49905,3.27 v,SSI-O
+13075,51323,only two units to choose from,SSI-O
+10350,48597,2.66 volts,SSI-O
+12454,50701,0.78/10=I,SSI-O
+5607,43850,what step r u confused on? did u get how we got the current?,SESU-P
+8096,46339,"ah well, it was worth a shot",SMC-R
+684,686,i'm calculating around 150 ohms,CEC-R
+2227,31422,.67 off by .04,CMC-S
+14747,52997,1.76 now,SSI-O
+14103,52351,1.69,SSI-O
+2521,31716,done,CMC-S
+3170,41406,Was literally typing out if we guess and check enough we will get it hahahha,CP-S
+10614,48861,"so, we can figure out the voltage of R0",SSI-O
+9662,47905,No,SN-D
+505,507,going down one more,CEC-R
+10361,48608,it is reading 22 for me at 200 k and 1 at 20 k,SSI-O
+9499,47742,no,SN-D
+2072,31267,I'm reading 5.33 V when I should have 5.35 V,CMC-S
+13520,51768,Oh wait i'm the first resistor in the circuit,SSI-O
+15830,54085,hmmmmmmm,SSI-U
+7775,46018,pineapple,SMC-O
+9011,47254,yeah,SN-A
+7573,45816,59i0,SMC-O
+14806,53056,well he dont even know,SSI-O
+9946,48193,my goal is 4.5V,SSI-O
+7309,45552,ape,SMC-I
+11100,49347,"I'm 6.38A,  3.73 volts",SSI-O
+4939,43180,mine too,SESU-A
+12643,50890,im at 6.45 now,SSI-O
+9392,47635,yes,SN-A
+11142,49389,0.57,SSI-O
+6410,44653,So R1 goes first and sets it right?,SESU-P
+5739,43982,"So, are we controlling the amperage?",SESU-P
+11570,49817,180,SSI-O
+14176,52424,2,SSI-O
+8883,47126,yeah,SN-A
+1250,1253,seagull go 560,CEC-S
+165,166,ill go up to 68,CEC-R
+4518,42759,to get the voltage drop for R0,SESU-A
+1089,1092,ice cream go to 150,CEC-S
+11603,49850,And i need 5.71,SSI-O
+14065,52313,meter isnt reading now,SSI-O
+14489,52739,2=(.05333*Req+Req),SSI-O
+13965,52213,some one changed that,SSI-O
+13961,52209,bear the resistor too,SSI-O
+12933,51181,we each indivdually have our own R0,SSI-O
+8983,47226,true i agree with that,SN-A
+9904,48151,I was just at 4.13,SSI-O
+1530,30723,someone has cut the wire,CMC-G
+132,133,"ok, i think i need a 220 ohm resistor. putting it in.",CEC-R
+2332,31527,but 17v is right for e,CMC-S
+12396,50643,and i got 1.67,SSI-O
+926,929,drop it to 120,CEC-S
+4267,42508,Same,SESU-A
+13389,51637,3.44,SSI-O
+12863,51111,I believe it is 12/390 assuming E=IR,SSI-O
+7886,46129,im falling asleep,SMC-O
+3079,41315,the odd one out removes the wires from the bread board and measures the voltage,CP-S
+4932,43173,ok,SESU-A
+11153,49400,390,SSI-O
+1917,31111,3.5 also,CMC-S
+14440,52690,4.7 is my goal,SSI-O
+8914,47157,yeah,SN-A
+1541,30734,acton?,CMC-G
+8688,46931,yea,SN-A
+4206,42447,4.25,SESU-A
+13811,52059,9,SSI-O
+7218,45461,are your things on the outside of the resistor or somewhere else,SESU-P
+9383,47626,yea,SN-A
+8836,47079,yes,SN-A
+5961,44204,"so who can read the amps, I think they are wrong",SESU-P
+2917,41152,put your R to 820,CP-S
+12553,50800,5.13 V,SSI-O
+4434,42675,ooookaaaay,SESU-A
