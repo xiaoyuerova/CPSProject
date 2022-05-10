@@ -1,6 +1,8 @@
 import torch.utils.data as data
 import pandas as pd
-from source.data_tcn.parameters import Sliding_window_radius
+from source.data_tcn.parameters import Parameters
+
+parameters = Parameters()
 
 
 class MyDataset(data.Dataset):
@@ -13,7 +15,10 @@ class MyDataset(data.Dataset):
         在这里进行初始化，一般是初始化文件路径或文件列表
         """
         self.df = df
-        pass
+        self.length = 0
+        self.read_index = []
+        self.window = parameters.Sliding_window_radius * 2 + 1
+        self.init()
 
     def __getitem__(self, index):
         """
@@ -23,12 +28,17 @@ class MyDataset(data.Dataset):
 
         :returns labels, sequence ：一个滑动窗口的标签和数据
         """
-        labels = []
+        # labels = []
+        # sequence = []
+        # for i in range(index, index + parameters.Sliding_window_radius * 2 + 1):
+        #     labels.append(self.df.loc[i, 'Label'])
+        #     sequence.append(self.df.loc[i, 'Action'])
+        # return labels, sequence
         sequence = []
-        for i in range(index, index + Sliding_window_radius * 2 + 1):
-            labels.append(self.df.loc[i, 'Label'])
-            sequence.append(self.df.loc[i, 'Action'])
-        return labels, sequence
+        for i in range(self.window):
+            sequence.append(self.df.loc[self.read_index[index] + i, 'Action'])
+        label = self.df['Label'][self.read_index[index] + self.window - 1]
+        return label, sequence
 
     def __len__(self):
         """
@@ -36,4 +46,16 @@ class MyDataset(data.Dataset):
 
         :return 滑动窗口的个数
         """
-        return self.df.__len__() - Sliding_window_radius * 2
+        # return self.df.__len__() - parameters.Sliding_window_radius * 2
+        return self.length
+
+    def init(self):
+        grouped_data = self.df.groupby(['NewName', 'LevelNumber'])
+        for name, group in grouped_data:
+            for index in group.index:
+                if group['DataCode'][index] == 5000:
+                    df_cell = group.loc[(index - self.window + 1): index]
+                    if len(df_cell) < self.window:
+                        continue
+                    self.length += 1
+                    self.read_index.append(index - self.window + 1)
