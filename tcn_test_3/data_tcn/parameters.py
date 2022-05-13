@@ -3,7 +3,7 @@ import torch
 
 class Parameters:
     # 滑动窗口大小
-    Sliding_window_radius = 2
+    Sliding_window_radius = 4
 
     # 句子最大长度
     Sentence_max_length = 16
@@ -16,4 +16,3 @@ class Parameters:
     epochs = 15
 
     lr = 2e-3
-

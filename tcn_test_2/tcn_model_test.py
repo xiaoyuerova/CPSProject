@@ -5,12 +5,11 @@ import time
 import pandas as pd
 import torch
 from torch import optim
-import torch.nn.functional as F
 import torch.nn as nn
 
-from source.data_tcn import *
-from source.data_tcn.parameters import Parameters
-from tcn_test.model import CpsTcnModel,CpsTcnModel2
+from source.data_tcn_2 import *
+from source.data_tcn_2.parameters import Parameters
+from tcn_test_2.model import CpsTcnModel
 
 from transformers import BertModel, BertTokenizer, logging
 
@@ -18,7 +17,7 @@ logging.set_verbosity_warning()
 logging.set_verbosity_error()
 parameters = Parameters()
 
-model = CpsTcnModel2(768, 11, [768] * 4)
+model = CpsTcnModel(768, 11, [768] * 4)
 model.to(parameters.device)
 # print(model)
 total = 0
@@ -81,7 +80,7 @@ def train(data: Data, epoch: int):
 
 
 def main():
-    _dir = './data/tcn-model-data2.csv'
+    _dir = '../data/tcn_test_data/tcn-model-data2.csv'
     df = pd.read_csv(_dir)
     df = df[df['Action'].notna()]
     df.reset_index(inplace=True)

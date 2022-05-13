@@ -5,12 +5,11 @@ import time
 import pandas as pd
 import torch
 from torch import optim
-import torch.nn.functional as F
 import torch.nn as nn
 
-from source.data_tcn import *
-from source.data_tcn.parameters import Parameters
-from tcn_test.model import CpsTcnModel,CpsTcnModel2
+from tcn_test_3.data_tcn import *
+from tcn_test_3.data_tcn.parameters import Parameters
+from tcn_test_3.model import CpsTcnModel
 
 from transformers import BertModel, BertTokenizer, logging
 
@@ -18,7 +17,7 @@ logging.set_verbosity_warning()
 logging.set_verbosity_error()
 parameters = Parameters()
 
-model = CpsTcnModel2(768, 11, [768] * 4)
+model = CpsTcnModel(4, 11, [8, 16, 32, 32])
 model.to(parameters.device)
 # print(model)
 total = 0
@@ -32,16 +31,18 @@ print("Number of training parameter: %.2fM" % (total2 / 1e6))
 
 criterion = nn.CrossEntropyLoss()
 optimizer = getattr(optim, 'Adam')(model.parameters(), lr=parameters.lr)
-bert_model = BertModel.from_pretrained('bert-base-uncased')
-bert_model.to(parameters.device)
 
 
-def generate_mask(x: torch.Tensor):
-    mask = []
-    for sentence in x:
-        temp = [1 if t != 0 else 0 for t in sentence]
-        mask.append(temp)
-    return torch.tensor(mask, dtype=torch.int64)
+# bert_model = BertModel.from_pretrained('bert-base-uncased')
+# bert_model.to(parameters.device)
+
+
+# def generate_mask(x: torch.Tensor):
+#     mask = []
+#     for sentence in x:
+#         temp = [1 if t != 0 else 0 for t in sentence]
+#         mask.append(temp)
+#     return torch.tensor(mask, dtype=torch.int64)
 
 
 def train(data: Data, epoch: int):
@@ -52,6 +53,9 @@ def train(data: Data, epoch: int):
     start_time = time.time()
     model.train()
     for idx, (label, text) in enumerate(data.dataloader):
+        # print('label', label)
+        # print('text', text)
+        # break
         optimizer.zero_grad()
         output = model(text)
 
@@ -81,7 +85,7 @@ def train(data: Data, epoch: int):
 
 
 def main():
-    _dir = './data/tcn-model-data2.csv'
+    _dir = '../data/tcn_test_data/tcn-model-data2.csv'
     df = pd.read_csv(_dir)
     df = df[df['Action'].notna()]
     df.reset_index(inplace=True)
@@ -90,6 +94,7 @@ def main():
 
     for epoch in range(parameters.epochs):
         train(data, epoch)
+        # break
 
 
 if __name__ == '__main__':
