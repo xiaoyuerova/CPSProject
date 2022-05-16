@@ -10,4 +10,4 @@
 ### model：
 将序列数据的每个action首尾相连。
 输入tcn的n是action的长度 * 5。
-[?,  n,  sentence_n,  k]. mean(dim=2)  ->  [?,  n*sentence_n,  k]
+[?,  n,  sentence_n,  k]  ->  [?,  n*sentence_n,  k]

@@ -16,7 +16,12 @@ class TextClassification(nn.Module):
         self.fc.bias.data.zero_()
 
     def forward(self, text, offsets):
+        """
+        text torch.Size([44])
+        embedded torch.Size([8, 100])
+        output torch.Size([8, 12])
+        embeddingBag 会对每个bag进行sum操作
+        """
         embedded = self.embedding(text, offsets)
-        return self.fc(embedded)
-
-
+        output = self.fc(embedded)
+        return output
