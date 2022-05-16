@@ -8,9 +8,9 @@ from torch import optim
 import torch.nn.functional as F
 import torch.nn as nn
 
-from source.data_tcn import *
-from source.data_tcn.parameters import Parameters
-from tcn_test.model import CpsTcnModel,CpsTcnModel2
+from tcn_test.data_tcn import *
+from tcn_test.data_tcn.parameters import Parameters
+from tcn_test.model import CpsTcnModel, CpsTcnModel2
 
 from transformers import BertModel, BertTokenizer, logging
 

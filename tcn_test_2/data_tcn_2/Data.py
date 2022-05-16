@@ -1,7 +1,7 @@
 import torch
 from torch.utils.data import DataLoader
 from transformers import BertTokenizer
-from source.data_tcn_2.parameters import Parameters
+from tcn_test_2.data_tcn_2.parameters import Parameters
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 parameters = Parameters()

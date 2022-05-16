@@ -3,7 +3,7 @@ import torch.nn as nn
 from transformers import logging
 from transformers import BertModel, BertTokenizer
 from source.TCN.tcn import TemporalConvNet
-from source.data_tcn.parameters import Parameters
+from data_tcn.parameters import Parameters
 
 parameters = Parameters()
 logging.set_verbosity_warning()

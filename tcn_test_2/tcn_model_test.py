@@ -7,8 +7,8 @@ import torch
 from torch import optim
 import torch.nn as nn
 
-from source.data_tcn_2 import *
-from source.data_tcn_2.parameters import Parameters
+from tcn_test_2.data_tcn_2 import *
+from tcn_test_2.data_tcn_2.parameters import Parameters
 from tcn_test_2.model import CpsTcnModel
 
 from transformers import BertModel, BertTokenizer, logging
