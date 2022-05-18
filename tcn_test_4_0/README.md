@@ -8,3 +8,5 @@
 action -> label
 训练一个不利用action间序列信息的空白对照组
 并用上kappa指数
+
+更换数据，使用data/tcn_test_data/tcn-model-data3.csv，用于与tcn_test_4_1的比较

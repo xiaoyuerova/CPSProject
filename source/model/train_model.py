@@ -6,7 +6,7 @@ from source.model.TextClassification import TextClassification
 def train(model: TextClassification, dataloader, epoch, criterion, optimizer):
     model.train()
     total_acc, total_count = 0, 0
-    log_interval = 1000
+    log_interval = 500
     criterion = torch.nn.CrossEntropyLoss()
     for idx, (label, text, offsets) in enumerate(dataloader):
         optimizer.zero_grad()

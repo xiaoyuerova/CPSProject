@@ -1,5 +1,8 @@
 import torch.utils.data as data
 import pandas as pd
+from tcn_test_4_1.data_tcn.parameters import Parameters
+
+parameters = Parameters()
 
 
 class MyDataset(data.Dataset):
@@ -16,10 +19,9 @@ class MyDataset(data.Dataset):
     def __getitem__(self, index):
         """
         1. 按照index，读取文件中对应的数据  （读取一个数据！！！！我们常读取的数据是图片，一般我们送入模型的数据成批的，但在这里只是读取一张图片，成批后面会说到）
-        2. 对读取到的数据进行数据增强 (数据增强是深度学习中经常用到的，可以提高模型的泛化能力)
-        3. 返回数据对 （一般我们要返回 图片，对应的标签） 在这里因为我没有写完整的代码，返回值用 0 代替
+
+        :returns labels, sequence ：一个滑动窗口的标签和数据
         """
-        # return (self.df[c][index] for c in self.df)
         sequence = self.df['Action_S'][index]
         label = self.df['Label'][index]
         return label, sequence
@@ -27,5 +29,7 @@ class MyDataset(data.Dataset):
     def __len__(self):
         """
         返回数据集的长度
+
+        :return 滑动窗口的个数
         """
         return self.df.__len__()

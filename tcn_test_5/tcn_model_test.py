@@ -6,12 +6,11 @@ import pandas as pd
 import torch
 from sklearn.metrics import cohen_kappa_score
 from torch import optim
-import torch.nn.functional as F
 import torch.nn as nn
 
-from tcn_test.data_tcn import *
-from tcn_test.data_tcn.parameters import Parameters
-from tcn_test.model import CpsTcnModel, CpsTcnModel2
+from tcn_test_5.data_tcn import *
+from tcn_test_5.data_tcn.parameters import Parameters
+from tcn_test_5.model import CpsTcnModel
 
 from transformers import BertModel, BertTokenizer, logging
 
@@ -19,7 +18,34 @@ logging.set_verbosity_warning()
 logging.set_verbosity_error()
 parameters = Parameters()
 
-model = CpsTcnModel2(768, 11, [768] * 4)
+_dir = 'data/tcn_test_data/tcn-model-data2.csv'
+df = pd.read_csv(_dir)
+df = df[df['DataCode'] == 5000]
+df = df[df['Action'].notna()]
+
+# 按组划分测试数据
+grouped_data = df.groupby(['NewName'])
+divide = int(len(grouped_data) * 0.8)
+df_list1 = []
+df_list2 = []
+for idx, (name, group) in enumerate(grouped_data):
+    if idx < divide:
+        df_list1.append(group)
+    else:
+        df_list2.append(group)
+df_train = pd.concat(df_list1)
+df_test = pd.concat(df_list2)
+
+# 初始化数据
+df_train.reset_index(inplace=True)
+dataset_train = MyDataset(df_train)
+data_train = Data(dataset_train)
+
+df_test.reset_index(inplace=True)
+dataset_test = MyDataset(df_test)
+data_test = Data(dataset_test)
+
+model = CpsTcnModel(768, 11, [3, 3])
 model.to(parameters.device)
 # print(model)
 total = 0
@@ -35,14 +61,6 @@ criterion = nn.CrossEntropyLoss()
 optimizer = getattr(optim, 'Adam')(model.parameters(), lr=parameters.lr)
 bert_model = BertModel.from_pretrained('bert-base-uncased')
 bert_model.to(parameters.device)
-
-
-def generate_mask(x: torch.Tensor):
-    mask = []
-    for sentence in x:
-        temp = [1 if t != 0 else 0 for t in sentence]
-        mask.append(temp)
-    return torch.tensor(mask, dtype=torch.int64)
 
 
 def evaluate(data: Data, epoch: int):
@@ -84,14 +102,14 @@ def evaluate(data: Data, epoch: int):
             kappa))
 
 
-def train(train_data: Data, test_data: Data, epoch: int):
+def train(data: Data, epoch: int):
     steps = 0
     total_loss = 0
     correct = 0.0
     total = 0.0
     start_time = time.time()
     model.train()
-    for idx, (label, text) in enumerate(train_data.dataloader):
+    for idx, (label, text) in enumerate(data.dataloader):
         optimizer.zero_grad()
         output = model(text)
 
@@ -111,45 +129,25 @@ def train(train_data: Data, test_data: Data, epoch: int):
             cur_loss = total_loss / log_interval
             elapsed = time.time() - start_time
             print('| epoch {:3d} | {:5d}/{:5d} batches | lr {:02.5f} | ms/batch {:5.5f} | '
-                  'loss {:5.2f} | ppl {:8.2f} | accuracy {:8.2f}%'.format(epoch, idx, train_data.dataloader.__len__(),
+                  'loss {:5.2f} | ppl {:8.2f} | accuracy {:8.2f}%'.format(epoch, idx, data.dataloader.__len__(),
                                                                           parameters.lr,
                                                                           elapsed * 1000 / log_interval, cur_loss,
                                                                           math.exp(cur_loss),
                                                                           correct / total * 100))
             total_loss = 0
             start_time = time.time()
-    evaluate(test_data, epoch)
 
 
 def main():
-    _dir = './data/tcn-model-data2.csv'
+    _dir = '../data/tcn_test_data/tcn-model-data2.csv'
     df = pd.read_csv(_dir)
     df = df[df['Action'].notna()]
-
-    # 按组划分测试数据
-    grouped_data = df.groupby(['NewName'])
-    divide = int(len(grouped_data) * 0.8)
-    df_list1 = []
-    df_list2 = []
-    for idx, (name, group) in enumerate(grouped_data):
-        if idx < divide:
-            df_list1.append(group)
-        else:
-            df_list2.append(group)
-    df_train = pd.concat(df_list1)
-    df_test = pd.concat(df_list2)
-
-    # 初始化数据
-    df_train.reset_index(inplace=True)
-    dataset_train = MyDataset(df_train)
-    data_train = Data(dataset_train)
-
-    df_test.reset_index(inplace=True)
-    dataset_test = MyDataset(df_test)
-    data_test = Data(dataset_test)
+    df.reset_index(inplace=True)
+    dataset = MyDataset(df)
+    data = Data(dataset)
 
     for epoch in range(parameters.epochs):
-        train(data_train, data_test, epoch)
+        train(data, epoch)
 
 
 if __name__ == '__main__':
