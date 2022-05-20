@@ -3,8 +3,10 @@ from torch.utils.data import DataLoader
 from transformers import BertTokenizer
 from tcn_test_4_0.data_tcn.parameters import Parameters
 
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 parameters = Parameters()
+# 初始化分词器，并添加特殊词汇
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+tokenizer.add_special_tokens(parameters.special_tokens)
 
 
 def text_pipeline(sentence):

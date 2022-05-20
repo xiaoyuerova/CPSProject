@@ -18,3 +18,6 @@ class Parameters:
     lr = 2e-3
 
     log_interval = 500
+
+    special_tokens = {'additional_special_tokens': ['[R_zero]', '[R_one]', '[R_two]', '[R_three]',
+                                                    '[voltage]', '[current]', '[number]']}

@@ -90,6 +90,14 @@ def main():
 
     num_class = 11
     model = TextClassification(vocab_size, num_class).to(data_train.device)
+    total = 0
+    total2 = 0
+    for param in model.parameters():
+        total += param.nelement()
+        if param.requires_grad:
+            total2 += param.nelement()
+    print("Number of parameter: %.2fM" % (total / 1e6))
+    print("Number of training parameter: %.2fM" % (total2 / 1e6))
     train_model(model, data_train.dataloader, data_test.dataloader, data_test.dataloader)
 
 

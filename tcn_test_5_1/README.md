@@ -10,19 +10,5 @@
 
 
 ### model：
-将数据分为y_before、y_center、y_behind三份
 
-#### embedding
-bert语料库
-
-#### tcn
-(1) y_before 和 y_behind 通过 一个tcn模型；
-(2) y_center通过另一个tcn模型
-
-#### 线性层：
-(1) 768 -> 50;   768 -> 50
-(2) 768 -> 50
-
-50 * 3 -> 11
-
-
+尝试先将Action连接，再做padding

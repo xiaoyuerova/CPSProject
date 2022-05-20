@@ -10,6 +10,7 @@ import torch.nn as nn
 from tcn_test_4_1.data_tcn import *
 from tcn_test_4_1.data_tcn.parameters import Parameters
 from tcn_test_4_1.model import CpsTcnModel
+from tcn_test_4_1.utils import build_vocab_from_iterator_re,data_iter
 
 from transformers import BertModel, BertTokenizer, logging
 
@@ -38,12 +39,14 @@ df_test = pd.concat(df_list2)
 # 初始化数据
 df_train.reset_index(inplace=True)
 dataset_train = MyDataset(df_train)
-data_train = Data(dataset_train)
-vocab_size = len(data_train.vocab)
+vocab = build_vocab_from_iterator_re(data_iter(dataset_train))
+vocab_size = len(vocab)
+data_train = Data(dataset_train, vocab)
+
 
 df_test.reset_index(inplace=True)
 dataset_test = MyDataset(df_test)
-data_test = Data(dataset_test)
+data_test = Data(dataset_test, vocab)
 
 # 准备模型
 model = CpsTcnModel(vocab_size, 11, [parameters.embedding_size] * 3)
@@ -93,10 +96,9 @@ def evaluate(data: Data, epoch: int):
     kappa = cohen_kappa_score(y1, y2)
     print(
         '| epoch {:3d} | {:5d} batches | ms/batch {:5.5f} | loss {:5.2f} | '
-        'ppl {:8.2f} | accuracy {:8.2f}% | Kappa {:8.4f}'.format(
+        'accuracy {:8.2f}% | Kappa {:8.4f}'.format(
             epoch + 1, batches,
             elapsed * 1000 / batches, cur_loss,
-            math.exp(cur_loss),
             correct / total * 100,
             kappa))
 
@@ -127,10 +129,9 @@ def train(train_data: Data, test_data: Data, epoch: int):
             cur_loss = total_loss / log_interval
             elapsed = time.time() - start_time
             print('| epoch {:3d} | {:5d}/{:5d} batches | lr {:02.5f} | ms/batch {:5.5f} | '
-                  'loss {:5.2f} | ppl {:8.2f} | accuracy {:8.2f}%'.format(epoch+1, idx, train_data.dataloader.__len__(),
+                  'loss {:5.2f} | accuracy {:8.2f}%'.format(epoch+1, idx, train_data.dataloader.__len__(),
                                                                           parameters.lr,
                                                                           elapsed * 1000 / log_interval, cur_loss,
-                                                                          math.exp(cur_loss),
                                                                           correct / total * 100))
             total_loss = 0
             start_time = time.time()

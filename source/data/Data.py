@@ -37,7 +37,7 @@ class Data:
         :param dataset:
         """
         self.vocab = build_vocab_from_iterator_re(data_iter(dataset))
-        self.text_pipeline = lambda x: self.vocab(tokenizer(x))
+        self.text_pipeline = lambda x: self.vocab(model_transformer.tokenize(x))
         self.label_pipeline = lambda x: int(x)        # 千万注意要不要-1
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.dataloader = DataLoader(dataset, batch_size=8, shuffle=False, collate_fn=self.collate_batch)

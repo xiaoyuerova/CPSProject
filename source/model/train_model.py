@@ -45,6 +45,7 @@ def train_model(model, train_dataloader, test_dataloader, val_dataloader, epochs
         train(model, train_dataloader, epoch, criterion, optimizer)
         accu_val = evaluate(model, val_dataloader)
         if total_accu is not None and total_accu > accu_val:
+            print('it runs')
             scheduler.step()
         else:
             total_accu = accu_val

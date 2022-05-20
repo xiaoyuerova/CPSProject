@@ -8,9 +8,9 @@ from sklearn.metrics import cohen_kappa_score
 from torch import optim
 import torch.nn as nn
 
-from tcn_test_5.data_tcn import *
-from tcn_test_5.data_tcn.parameters import Parameters
-from tcn_test_5.model import CpsTcnModel
+from tcn_test_5_1.data_tcn import *
+from tcn_test_5_1.data_tcn.parameters import Parameters
+from tcn_test_5_1.model import CpsTcnModel
 
 from transformers import BertModel, BertTokenizer, logging
 
@@ -45,7 +45,7 @@ df_test.reset_index(inplace=True)
 dataset_test = MyDataset(df_test)
 data_test = Data(dataset_test)
 
-model = CpsTcnModel(768, 11, [4, 4])
+model = CpsTcnModel(768, 11, [3, 3])
 model.to(parameters.device)
 # print(model)
 total = 0

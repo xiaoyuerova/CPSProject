@@ -1,7 +1,7 @@
 import torch
 from torch.utils.data import DataLoader
+from torchtext.vocab import Vocab
 from transformers import BertTokenizer
-from torchtext.vocab import build_vocab_from_iterator
 from tcn_test_4_1.data_tcn.parameters import Parameters
 from tcn_test_4_1.data_tcn.MyDataset import MyDataset
 
@@ -27,33 +27,13 @@ def label_pipeline(label):
     return int(label)
 
 
-def yield_tokens(d_iter):
-    for _, text in d_iter:
-        if type(text) == float:
-            print(text)
-            continue
-        else:
-            yield tokenizer.tokenize(text)
-
-
-def build_vocab_from_iterator_re(train_iter):
-    vocab = build_vocab_from_iterator(yield_tokens(train_iter), specials=['[PAD]', '[CLS]', '[SEP]'])
-    vocab.set_default_index(vocab["[PAD]"])
-    return vocab
-
-
-def data_iter(dataset: MyDataset):
-    for index in range(0, dataset.__len__()):
-        yield dataset.__getitem__(index)
-
-
 class Data:
-    def __init__(self, dataset):
+    def __init__(self, dataset: MyDataset, vocab: Vocab):
         """
 
         :param dataset:
         """
-        self.vocab = build_vocab_from_iterator_re(data_iter(dataset))
+        self.vocab = vocab
         self.text_pipeline = lambda x: self.vocab(text_tokenizer(x))
         self.label_pipeline = label_pipeline
         self.device = parameters.device

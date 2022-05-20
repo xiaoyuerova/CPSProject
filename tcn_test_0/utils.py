@@ -1,17 +1,19 @@
 # from pytorch_pretrained_bert import BertTokenizer
 from transformers import BertTokenizer
-from tcn_test_4_1.data_tcn.MyDataset import MyDataset
-from tcn_test_4_1.data_tcn.parameters import Parameters
+from torchtext.data.utils import get_tokenizer
+from tcn_test_0.data_tcn.MyDataset import MyDataset
+from tcn_test_0.data_tcn.parameters import Parameters
 from torchtext.vocab import build_vocab_from_iterator
 
 
-tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
+tokenizer = BertTokenizer.from_pretrained('bert-base-uncased').tokenize
+# tokenizer = get_tokenizer('basic_english')
 parameters = Parameters()
 
 
 def build_vocab_from_iterator_re(train_iter):
-    vocab = build_vocab_from_iterator(yield_tokens(train_iter), specials=['[PAD]', '[CLS]', '[SEP]'])
-    vocab.set_default_index(vocab["[PAD]"])
+    vocab = build_vocab_from_iterator(yield_tokens(train_iter), specials=["<unk>"])
+    vocab.set_default_index(vocab["<unk>"])
     return vocab
 
 
@@ -26,4 +28,4 @@ def yield_tokens(d_iter):
             print(text)
             continue
         else:
-            yield tokenizer.tokenize(text)
+            yield tokenizer(text)

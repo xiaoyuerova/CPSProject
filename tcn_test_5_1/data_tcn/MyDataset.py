@@ -1,6 +1,6 @@
 import torch.utils.data as data
 import pandas as pd
-from tcn_test_5.data_tcn.parameters import Parameters
+from tcn_test_5_1.data_tcn.parameters import Parameters
 
 parameters = Parameters()
 
