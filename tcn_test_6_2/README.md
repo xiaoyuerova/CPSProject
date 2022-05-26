@@ -14,4 +14,3 @@
 模型6-1：embaddingBag + tcn，不做数据划分，把模型6简化
 模型0：embaddingBag 单句预测
 模型集成
-
