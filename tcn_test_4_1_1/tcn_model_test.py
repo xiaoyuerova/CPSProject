@@ -1,6 +1,5 @@
 import math
 
-import numpy as np
 import time
 import pandas as pd
 import torch
@@ -8,9 +7,10 @@ from sklearn.metrics import cohen_kappa_score
 from torch import optim
 import torch.nn as nn
 
-from tcn_test_5.data_tcn import *
-from tcn_test_5.data_tcn.parameters import Parameters
-from tcn_test_5.model import CpsTcnModel
+from tcn_test_4_1_1.data_tcn import *
+from tcn_test_4_1_1.data_tcn.parameters import Parameters
+from tcn_test_4_1_1.model import CpsTcnModel
+from tcn_test_4_1_1.utils import build_vocab_from_iterator_re, data_iter
 
 from transformers import BertModel, BertTokenizer, logging
 
@@ -20,7 +20,7 @@ parameters = Parameters()
 
 _dir = '../data/tcn_test_data/tcn-model-data3.csv'
 df = pd.read_csv(_dir)
-# df = df[df['DataCode'] == 5000]
+df = df[df['DataCode'] == 5000]
 df = df[df['Action_S'].notna()]
 
 # 按组划分测试数据
@@ -39,13 +39,16 @@ df_test = pd.concat(df_list2)
 # 初始化数据
 df_train.reset_index(inplace=True)
 dataset_train = MyDataset(df_train)
-data_train = Data(dataset_train)
+vocab = build_vocab_from_iterator_re(data_iter(dataset_train))
+vocab_size = len(vocab)
+data_train = Data(dataset_train, vocab)
 
 df_test.reset_index(inplace=True)
 dataset_test = MyDataset(df_test)
-data_test = Data(dataset_test)
+data_test = Data(dataset_test, vocab)
 
-model = CpsTcnModel(768, 11, [3, 3])
+# 准备模型
+model = CpsTcnModel(vocab_size, 11, [parameters.embedding_size] * 3)
 model.to(parameters.device)
 # print(model)
 total = 0
@@ -58,7 +61,7 @@ print("Number of parameter: %.2fM" % (total / 1e6))
 print("Number of training parameter: %.2fM" % (total2 / 1e6))
 
 criterion = nn.CrossEntropyLoss()
-optimizer = getattr(optim, 'Adam')(model.parameters(), lr=parameters.lr)
+optimizer = torch.optim.SGD(model.parameters(), lr=parameters.lr)
 
 
 def evaluate(data: Data, epoch: int):
@@ -75,6 +78,10 @@ def evaluate(data: Data, epoch: int):
 
         total += label.size(0)
 
+        # print('output', output.size())
+        # print('output', output[0])
+        # print('label', label.size())
+        # print('label', label)
         loss = criterion(output, label)
         total_loss += loss.item()
 
@@ -92,15 +99,15 @@ def evaluate(data: Data, epoch: int):
     kappa = cohen_kappa_score(y1, y2)
     print(
         '| epoch {:3d} | {:5d} batches | ms/batch {:5.5f} | loss {:5.2f} | '
-        'ppl {:8.2f} | accuracy {:8.2f}% | Kappa {:8.4f}'.format(
+        'accuracy {:8.2f}% | Kappa {:8.4f}'.format(
             epoch + 1, batches,
             elapsed * 1000 / batches, cur_loss,
-            math.exp(cur_loss),
             correct / total * 100,
             kappa))
+    return correct / total
 
 
-def train(train_data: Data, test_data: Data, epoch: int):
+def train(train_data: Data, epoch: int):
     total_loss = 0
     correct = 0.0
     total = 0.0
@@ -126,19 +133,25 @@ def train(train_data: Data, test_data: Data, epoch: int):
             cur_loss = total_loss / log_interval
             elapsed = time.time() - start_time
             print('| epoch {:3d} | {:5d}/{:5d} batches | lr {:02.5f} | ms/batch {:5.5f} | '
-                  'loss {:5.2f} | ppl {:8.2f} | accuracy {:8.2f}%'.format(epoch+1, idx, train_data.dataloader.__len__(),
-                                                                          parameters.lr,
-                                                                          elapsed * 1000 / log_interval, cur_loss,
-                                                                          math.exp(cur_loss),
-                                                                          correct / total * 100))
+                  'loss {:5.2f} | accuracy {:8.2f}%'.format(epoch + 1, idx, train_data.dataloader.__len__(),
+                                                            optimizer.param_groups[0]['lr'],
+                                                            elapsed * 1000 / log_interval, cur_loss,
+                                                            correct / total * 100))
             total_loss = 0
             start_time = time.time()
-    evaluate(test_data, epoch)
 
 
 def main():
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.1)
+    total_accu = None
     for epoch in range(parameters.epochs):
-        train(data_train, data_test, epoch)
+        train(data_train, epoch)
+        accu_val = evaluate(data_test, epoch)
+        if total_accu is not None and total_accu > accu_val:
+            print('scheduler runs')
+            scheduler.step()
+        else:
+            total_accu = accu_val
 
 
 if __name__ == '__main__':

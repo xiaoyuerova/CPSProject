@@ -13,7 +13,7 @@ class Parameters:
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    epochs = 5
+    epochs = 15
 
     lr = 2e-3
 

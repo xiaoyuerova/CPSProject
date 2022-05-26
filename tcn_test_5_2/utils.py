@@ -1,5 +1,5 @@
 import torch
-from tcn_test_5_1.data_tcn.parameters import Parameters
+from tcn_test_5.data_tcn.parameters import Parameters
 
 parameters = Parameters()
 
@@ -19,18 +19,10 @@ def divide_data_for_tcn(tokens: torch.Tensor):
     :param tokens:
     :return:
     """
-    tokens_before = tokens[:, 0]
-    tokens_center = tokens[:, 1]
-    tokens_behind = tokens[:, 2]
-    return tokens_before, tokens_center, tokens_behind
-
-
-def to_tenser(x: [torch.Tensor], index: int):
-    batch_size = len(x)
-    xx = []
-    for i in range(batch_size):
-        xx.append(x[i][index])
-    return torch.cat([item.view(1, -1) for item in xx], dim=0)
+    tokens_before = tokens[:, :parameters.Sliding_window_radius]
+    tokens_center = tokens[:, parameters.Sliding_window_radius]
+    tokens_behind = tokens[:, parameters.Sliding_window_radius + 1:]
+    return cat_sentence(tokens_before), tokens_center, cat_sentence(tokens_behind)
 
 
 def cat_sentence(tokens: torch.tensor):

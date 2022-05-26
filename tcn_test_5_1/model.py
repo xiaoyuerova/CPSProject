@@ -4,7 +4,7 @@ from transformers import logging
 from transformers import BertModel, BertTokenizer
 from source.TCN.tcn import TemporalConvNet
 from tcn_test_5_1.data_tcn.parameters import Parameters
-from tcn_test_5_1.utils import generate_mask, divide_data_for_tcn
+from tcn_test_5_1.utils import generate_mask, divide_data_for_tcn, to_tenser
 
 parameters = Parameters()
 logging.set_verbosity_warning()
@@ -25,12 +25,8 @@ class Embedding(nn.Module):
         :param x: torch.tenser() [batch_size, sequence_length,sentence_length]
         :return:
         """
-        batch_size = x.size(0)
-        seq_length = x.size(1)
-        x = x.view(batch_size, -1)
         mask = generate_mask(x).to(parameters.device)
         tokens = self.bert_model(x, attention_mask=mask)[0]
-        tokens = tokens.view(batch_size, seq_length, -1, 768)
         return tokens
 
 
@@ -54,28 +50,31 @@ class CpsTcnModel(nn.Module):
         self.tcn_for_center = TemporalConvNet(input_size, [input_size] * levels[0], kernel_size, dropout=dropout)
         self.tcn_for_outer = TemporalConvNet(input_size, [input_size] * levels[1], kernel_size, dropout=dropout)
 
-        self.linear_for_center = nn.Linear(input_size, 50)
-        self.linear_for_outer = nn.Linear(input_size, 50)
-        self.decoder = nn.Linear(50 * 3, output_size)
+        self.linear_for_center = nn.Linear(input_size, output_size)
+        self.linear_for_outer = nn.Linear(input_size, output_size)
 
         self.drop = nn.Dropout(emb_dropout)
         self.emb_dropout = emb_dropout
         self.init_weights()
 
     def init_weights(self):
-        self.decoder.bias.data.fill_(0)
-        self.decoder.weight.data.normal_(0, 0.01)
+        self.linear_for_center.bias.data.fill_(0)
+        self.linear_for_center.weight.data.normal_(0, 0.01)
+        self.linear_for_outer.bias.data.fill_(0)
+        self.linear_for_outer.weight.data.normal_(0, 0.01)
 
     def forward(self, _input):
         """Input ought to have dimension (N, C_in, L_in), where L_in is the seq_len; here the input is (N, L, C)"""
-        emb_tokens = self.encoder(_input)
-        tokens_before, tokens_center, tokens_behind = divide_data_for_tcn(emb_tokens)
+        # print(to_tenser(_input, 0).size())
+        tokens_before = self.encoder(to_tenser(_input, 0))
+        tokens_center = self.encoder(to_tenser(_input, 1))
+        tokens_behind = self.encoder(to_tenser(_input, 2))
         y_before = self.tcn_for_outer(tokens_before.transpose(1, 2)).transpose(1, 2).mean(dim=1)
         y_center = self.tcn_for_center(tokens_center.transpose(1, 2)).transpose(1, 2).mean(dim=1)
         y_behind = self.tcn_for_outer(tokens_behind.transpose(1, 2)).transpose(1, 2).mean(dim=1)
         y_before = self.linear_for_outer(y_before)
         y_center = self.linear_for_center(y_center)
         y_behind = self.linear_for_outer(y_behind)
-        y = torch.cat([y_before, y_center, y_behind], dim=1)
-        y = self.decoder(y)
+
+        y = (y_center + y_before * y_before + y_center * y_behind) / 3
         return y
