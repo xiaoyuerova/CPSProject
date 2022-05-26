@@ -10,8 +10,12 @@
 
 
 ### model：
-使用embeddingBag,做综合模型
+考虑时序信息
+embaddingBag + tcn，不做数据划分，把模型6简化
 
+
+基于模型6
+使用embeddingBag,做综合模型
 
 
 基于模型5

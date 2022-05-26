@@ -10,24 +10,8 @@
 
 
 ### model：
-使用embeddingBag,做综合模型
-
-
-
-基于模型5
-将数据分为y_before、y_center、y_behind三份
-
-#### embedding
-bert语料库
-
-#### tcn
-(1) y_before 和 y_behind 通过 一个tcn模型；
-(2) y_center通过另一个tcn模型
-
-#### 线性层：
-(1) 768 -> 50;   768 -> 50
-(2) 768 -> 50
-
-50 * 3 -> 11
-
+考虑时序信息
+模型6-1：embaddingBag + tcn，不做数据划分，把模型6简化
+模型0：embaddingBag 单句预测
+模型集成
 
