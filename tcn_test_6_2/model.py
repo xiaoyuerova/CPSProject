@@ -40,7 +40,7 @@ class CpsTcnModel(nn.Module):
                  kernel_size=2, dropout=0.3, emb_dropout=0.1):
         """
 
-        :param input_size: embedding后的维度
+        :param embed_dim: embedding后的维度
         :param output_size: 可能的输出类别个数（11）
         :param levels: tcn中 block的层数
         :param kernel_size:
