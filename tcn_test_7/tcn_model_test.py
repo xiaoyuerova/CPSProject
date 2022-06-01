@@ -1,4 +1,4 @@
-import math
+import copy
 
 import time
 import pandas as pd
@@ -10,29 +10,30 @@ import torch.nn as nn
 from tcn_test_7.data_tcn import *
 from tcn_test_7.data_tcn.parameters import Parameters
 from tcn_test_7.model import CpsTcnModel
-from tcn_test_7.utils import k_fold_test, get_vocab
+from tcn_test_7.utils import k_fold_test, get_vocab, generate_model
 
 parameters = Parameters()
 vocab = get_vocab()
 
 # 准备模型
-model = CpsTcnModel(len(vocab), 11, [parameters.embedding_size] * 3)
-model.to(parameters.device)
+# model_base = CpsTcnModel(len(vocab), 11, [parameters.embedding_size] * 3)
+# model_base.to(parameters.device)
 
-total = 0
-total2 = 0
-for param in model.parameters():
-    total += param.nelement()
-    if param.requires_grad:
-        total2 += param.nelement()
-print("Number of parameter: %.2fM" % (total / 1e6))
-print("Number of training parameter: %.2fM" % (total2 / 1e6))
+# 统计模型参数
+# total = 0
+# total2 = 0
+# for param in model_base.parameters():
+#     total += param.nelement()
+#     if param.requires_grad:
+#         total2 += param.nelement()
+# print("Number of parameter: %.2fM" % (total / 1e6))
+# print("Number of training parameter: %.2fM" % (total2 / 1e6))
 
 criterion = nn.CrossEntropyLoss()
-optimizer = torch.optim.SGD(model.parameters(), lr=parameters.lr)
+# optimizer = torch.optim.SGD(model.parameters(), lr=parameters.lr)
 
 
-def evaluate(data: Data, k_step: int):
+def evaluate(k_step: int, model, data: Data, optimizer):
     total_loss = 0
     correct = 0.0
     total = 0.0
@@ -46,10 +47,6 @@ def evaluate(data: Data, k_step: int):
 
         total += label.size(0)
 
-        # print('output', output.size())
-        # print('output', output[0])
-        # print('label', label.size())
-        # print('label', label)
         loss = criterion(output, label)
         total_loss += loss.item()
 
@@ -75,7 +72,8 @@ def evaluate(data: Data, k_step: int):
     return correct / total, kappa
 
 
-def train(train_data: Data, k_step: int):
+def train(k_step: int, model, train_data: Data, optimizer):
+
     total_loss = 0
     correct = 0.0
     total = 0.0
@@ -110,21 +108,25 @@ def train(train_data: Data, k_step: int):
 
 
 def main():
-    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.1)
-    total_accu = None
+    # scheduler_base = torch.optim.lr_scheduler.StepLR(optimizer, 1.0, gamma=0.1)
+    total_accu = [None] * 10
+    model = [generate_model(vocab) for idx in range(parameters.n_splits)]
+    optimizer = [torch.optim.SGD(model[idx].parameters(), lr=parameters.lr) for idx in range(parameters.n_splits)]
+    scheduler = [torch.optim.lr_scheduler.StepLR(optimizer[idx], 1.0, gamma=0.1) for idx in range(parameters.n_splits)]
+
     accu_vals, kappas = [], []
-    for epoch in range(2):
+    for epoch in range(parameters.epochs):
         print('epoch {} '.format(epoch) + '-' * 20)
         for idx, (train_data, test_data) in enumerate(k_fold_test(vocab)):
-            train(train_data, idx)
-            accu_val, kappa = evaluate(test_data, idx)
+            train(idx, model[idx], train_data, optimizer[idx])
+            accu_val, kappa = evaluate(idx, model[idx], test_data, optimizer[idx])
             accu_vals.append(accu_val)
             kappas.append(kappa)
-            if total_accu is not None and total_accu > accu_val:
+            if total_accu[idx] is not None and total_accu[idx] > accu_val:
                 print('scheduler runs')
-                scheduler.step()
+                scheduler[idx].step()
             else:
-                total_accu = accu_val
+                total_accu[idx] = accu_val
         print('k-fold cross validation: | accuracy {:8.2f}% | Kappa {:8.4f} |'.format(
             sum(accu_vals) / len(accu_vals),
             sum(kappas) / len(kappas),

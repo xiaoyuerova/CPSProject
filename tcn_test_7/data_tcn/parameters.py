@@ -17,7 +17,7 @@ class Parameters:
 
     lr = 0.5
 
-    log_interval = 500
+    log_interval = 800
 
     embedding_size = 256
 

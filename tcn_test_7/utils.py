@@ -1,9 +1,12 @@
 # from pytorch_pretrained_bert import BertTokenizer
+import copy
+
 from transformers import BertTokenizer
 from tcn_test_7.data_tcn import *
 from torchtext.vocab import build_vocab_from_iterator, Vocab
 import pandas as pd
 from sklearn.model_selection import KFold
+from tcn_test_7.model import CpsTcnModel
 
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 parameters = Parameters()
@@ -57,7 +60,7 @@ def get_vocab():
 def k_fold_test(vocab: Vocab):
     # 加载数据
     df_list = load_data()
-    kf = KFold(n_splits=parameters.n_splits, shuffle=True)
+    kf = KFold(n_splits=parameters.n_splits, shuffle=True, random_state=parameters.random_state)
     for train_index, test_index in kf.split(df_list):
         # 数据是df
         train_data = pd.concat([df_list[i] for i in train_index])
@@ -73,6 +76,12 @@ def k_fold_test(vocab: Vocab):
         train_data = Data(dataset_train, vocab)
         test_data = Data(dataset_test, vocab)
         yield train_data, test_data
+
+
+def generate_model(vocab):
+    model = CpsTcnModel(len(vocab), 11, [parameters.embedding_size] * 3)
+    model.to(parameters.device)
+    return model
 
 
 if __name__ == '__main__':

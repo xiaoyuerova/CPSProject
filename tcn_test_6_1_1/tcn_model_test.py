@@ -1,35 +1,31 @@
-import os
+import math
 
+import numpy as np
 import time
 import pandas as pd
 import torch
-from sklearn.metrics import cohen_kappa_score
+from sklearn.metrics import cohen_kappa_score, classification_report
 from torch import optim
 import torch.nn as nn
 
-from tcn_test_4_1_1.data_tcn import *
-from tcn_test_4_1_1.data_tcn.parameters import Parameters
-from tcn_test_4_1_1.model import CpsTcnModel
-from tcn_test_4_1_1.utils import build_vocab_from_iterator_re, data_iter
+from tcn_test_6_1_1.data_tcn import *
+from tcn_test_6_1_1.data_tcn.parameters import Parameters
+from tcn_test_6_1_1.model import CpsTcnModel
+from tcn_test_6_1_1.utils import build_vocab_from_iterator_re, data_iter
 
-from transformers import BertModel, BertTokenizer, logging
-
-logging.set_verbosity_warning()
-logging.set_verbosity_error()
 parameters = Parameters()
 
-_dir = os.path.join(os.path.dirname(__file__), '../data/tcn_test_data/tcn-model-data3.csv')
+_dir = '../data/tcn_test_data/tcn-model-data3.csv'
 df = pd.read_csv(_dir)
-df = df[df['DataCode'] == 5000]
 df = df[df['Action_S'].notna()]
 
 # 按组划分测试数据
 grouped_data = df.groupby(['NewName'])
-divide = int(len(grouped_data) * 0.9)
+divide = int(len(grouped_data) * 0.8)
 df_list1 = []
 df_list2 = []
 for idx, (name, group) in enumerate(grouped_data):
-    if idx % 10 != 1:
+    if idx < divide:
         df_list1.append(group)
     else:
         df_list2.append(group)
@@ -47,8 +43,16 @@ df_test.reset_index(inplace=True)
 dataset_test = MyDataset(df_test)
 data_test = Data(dataset_test, vocab)
 
+df_target = df_test[df_test['DataCode'] == 5000]
+target_names = []
+for i in range(11):
+    for index in df_target.index:
+        if i == df_target.at[index, 'Label']:
+            target_names.append(df_target.at[index, 'Jess0'])
+            break
+
 # 准备模型
-model = CpsTcnModel(vocab_size, 11, [parameters.embedding_size] * 3)
+model = CpsTcnModel(vocab_size, 11, 3)
 model.to(parameters.device)
 # print(model)
 total = 0
@@ -68,31 +72,30 @@ def evaluate(data: Data, epoch: int):
     total_loss = 0
     correct = 0.0
     total = 0.0
-    y1 = []
-    y2 = []
+    y_pred, y_true = [], []
     start_time = time.time()
     model.eval()
-    for idx, (label, text) in enumerate(data.dataloader):
+    for idx, (labels, texts, offsets) in enumerate(data.dataloader):
         optimizer.zero_grad()
-        output = model(text)
+        output = model(texts, offsets)
 
-        total += label.size(0)
+        total += labels.size(0)
 
-        loss = criterion(output, label)
+        loss = criterion(output, labels)
         total_loss += loss.item()
 
         predict = output.argmax(1)
-        for i in predict.eq(label):
+        for i in predict.eq(labels):
             if i:
                 correct += 1
 
-        y1.extend(predict.to('cpu'))
-        y2.extend(label.to('cpu'))
+        y_pred.extend(predict.to('cpu'))
+        y_true.extend(labels.to('cpu'))
 
     batches = data.dataloader.__len__()
     cur_loss = total_loss / batches
     elapsed = time.time() - start_time
-    kappa = cohen_kappa_score(y1, y2)
+    kappa = cohen_kappa_score(y_pred, y_true)
     print(
         '| epoch {:3d} | {:5d} batches | ms/batch {:5.5f} | loss {:5.2f} | '
         'accuracy {:8.2f}% | Kappa {:8.4f}'.format(
@@ -100,6 +103,7 @@ def evaluate(data: Data, epoch: int):
             elapsed * 1000 / batches, cur_loss,
             correct / total * 100,
             kappa))
+    print(classification_report(y_true, y_pred, target_names=target_names))
     return correct / total
 
 
@@ -109,16 +113,19 @@ def train(train_data: Data, epoch: int):
     total = 0.0
     start_time = time.time()
     model.train()
-    for idx, (label, text) in enumerate(train_data.dataloader):
+    # for item in train_data.dataloader:
+    #     print(item)
+    #     break
+    for idx, (labels, texts, offsets) in enumerate(train_data.dataloader):
         optimizer.zero_grad()
-        output = model(text)
+        output = model(texts, offsets)
 
-        total += label.size(0)
-        for i in output.argmax(1).eq(label):
+        total += labels.size(0)
+        for i in output.argmax(1).eq(labels):
             if i:
                 correct += 1
 
-        loss = criterion(output, label)
+        loss = criterion(output, labels)
         loss.backward()
         optimizer.step()
 
@@ -148,7 +155,6 @@ def main():
             scheduler.step()
         else:
             total_accu = accu_val
-    return model
 
 
 if __name__ == '__main__':

@@ -4,14 +4,28 @@
 序列不足的（开头），用['PAD']补齐
 
 ### data:
-滑动窗口半径大小 Sliding_window_radius = 2， 序列有5个action
+滑动窗口半径大小 Sliding_window_radius = 4， 序列有9个action
 
 句子最大长度 Sentence_max_length = 16
 
 
 ### model：
-将数据分为y_before、y_center、y_behind三份，
-先padding再连接
+使用classification_report评估模型
+target_names = ['SESU', 'SMC', 'SN', 'SSI', 'CRF', 'CP', 'CEC', 'CMC']
+
+
+
+基于6-1
+考虑时序信息
+embaddingBag + tcn，不做数据划分，把模型6简化
+
+
+基于模型6
+使用embeddingBag,做综合模型
+
+
+基于模型5
+将数据分为y_before、y_center、y_behind三份
 
 #### embedding
 bert语料库
