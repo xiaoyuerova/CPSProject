@@ -7,7 +7,7 @@
 
 ### model：
 action -> label
-训练一个不利用action间序列信息的空白对照组
+训练一个不利用action间序列信息的空白对照组，embedding+tcn
 并用上kappa指数
 
 基于模型4，不使用bertModel，自己训练embedding
