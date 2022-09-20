@@ -1,5 +1,5 @@
-import math
-
+# import os
+# os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 import time
 import pandas as pd
 import torch
@@ -18,7 +18,7 @@ logging.set_verbosity_warning()
 logging.set_verbosity_error()
 parameters = Parameters()
 
-_dir = '../data/tcn_test_data/tcn-model-data3.csv'
+_dir = '../data/tcn-model-data3-1.csv'
 df = pd.read_csv(_dir)
 df = df[df['DataCode'] == 5000]
 df = df[df['Action_S'].notna()]
