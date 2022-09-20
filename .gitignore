@@ -1,3 +1,14 @@
 !/data/
 /data/
 /test/
+/finetune_test/output/
+/finetune_test/model/
+/finetune_test/data/
+/tcn_test_10/model/
+/tcn_test_10_1/model/
+/tcn_test_10_2/model/
+/tcn_test_10_3/model/
+/tcn_test_10_4/model/
+/prompt/data/
+/finetune_test/example/data/
+/finetune_test_1/data/

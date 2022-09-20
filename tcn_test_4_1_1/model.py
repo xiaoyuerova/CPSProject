@@ -51,12 +51,8 @@ class CpsTcnModel(nn.Module):
 
     def forward(self, _input):
         """Input ought to have dimension (N, C_in, L_in), where L_in is the seq_len; here the input is (N, L, C)"""
-        # print('_input', _input)
         emb = self.encoder(_input)
-        # print('emb',emb)
         y = self.tcn(emb.transpose(1, 2)).transpose(1, 2)
         y = y.mean(dim=1)
-        # print('y1',y)
         y = self.decoder(y)
-        # print('y2',y)
         return y

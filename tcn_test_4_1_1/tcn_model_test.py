@@ -1,4 +1,4 @@
-import math
+import os
 
 import time
 import pandas as pd
@@ -18,18 +18,18 @@ logging.set_verbosity_warning()
 logging.set_verbosity_error()
 parameters = Parameters()
 
-_dir = '../data/tcn_test_data/tcn-model-data3.csv'
+_dir = os.path.join(os.path.dirname(__file__), '../data/tcn_test_data/tcn-model-data3.csv')
 df = pd.read_csv(_dir)
 df = df[df['DataCode'] == 5000]
 df = df[df['Action_S'].notna()]
 
 # 按组划分测试数据
 grouped_data = df.groupby(['NewName'])
-divide = int(len(grouped_data) * 0.8)
+divide = int(len(grouped_data) * 0.9)
 df_list1 = []
 df_list2 = []
 for idx, (name, group) in enumerate(grouped_data):
-    if idx < divide:
+    if idx % 10 != 1:
         df_list1.append(group)
     else:
         df_list2.append(group)
@@ -78,10 +78,6 @@ def evaluate(data: Data, epoch: int):
 
         total += label.size(0)
 
-        # print('output', output.size())
-        # print('output', output[0])
-        # print('label', label.size())
-        # print('label', label)
         loss = criterion(output, label)
         total_loss += loss.item()
 
@@ -152,6 +148,7 @@ def main():
             scheduler.step()
         else:
             total_accu = accu_val
+    return model
 
 
 if __name__ == '__main__':

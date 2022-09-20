@@ -8,7 +8,7 @@
 ### model：
 action -> label
 
-baseline
+baseline  TextClassification
 
 使用的embedingBag
 优化器使用SGD

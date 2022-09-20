@@ -10,7 +10,8 @@
 
 
 ### model：
-将数据分为y_before、y_center、y_behind三份
+将数据分为y_before、y_center、y_behind三份，
+先padding再连接
 
 #### embedding
 bert语料库
